@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF1615A31685294400C9CB0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A21685294400C9CB0E /* UIKit.framework */; };
+		BF1615A51685294400C9CB0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A41685294400C9CB0E /* Foundation.framework */; };
+		BF1615A71685294400C9CB0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A61685294400C9CB0E /* CoreGraphics.framework */; };
+		BF1615D61685294500C9CB0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A21685294400C9CB0E /* UIKit.framework */; };
+		BF1615D71685294500C9CB0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A41685294400C9CB0E /* Foundation.framework */; };
+		BFC0276E168E299C00CE3F80 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC0276C168E297600CE3F80 /* SenTestingKit.framework */; };
+		BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC027AC168E899500CE3F80 /* InfoPlist.strings */; };
+		BFC027CB168E899500CE3F80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B2168E899500CE3F80 /* AppDelegate.m */; };
+		BFC027CC168E899500CE3F80 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B5168E899500CE3F80 /* FirstViewController.m */; };
+		BFC027CD168E899500CE3F80 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B7168E899500CE3F80 /* SecondViewController.m */; };
+		BFC027CE168E899500CE3F80 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B9168E899500CE3F80 /* ThirdViewController.m */; };
+		BFC027CF168E899500CE3F80 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027BC168E899500CE3F80 /* first.png */; };
+		BFC027D0168E899500CE3F80 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027BD168E899500CE3F80 /* first@2x.png */; };
+		BFC027D1168E899500CE3F80 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027BE168E899500CE3F80 /* second.png */; };
+		BFC027D2168E899500CE3F80 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027BF168E899500CE3F80 /* second@2x.png */; };
+		BFC027D3168E899500CE3F80 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC027C2168E899500CE3F80 /* MainStoryboard_iPad.storyboard */; };
+		BFC027D4168E899500CE3F80 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC027C3168E899500CE3F80 /* MainStoryboard_iPhone.storyboard */; };
+		BFC027D5168E899500CE3F80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027C5168E899500CE3F80 /* main.m */; };
+		BFC027D7168E8A1000CE3F80 /* OtoTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027AA168E899500CE3F80 /* OtoTestTests.m */; };
+		BFC027DD168E8B8100CE3F80 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027DA168E8B8100CE3F80 /* Default-568h@2x.png */; };
+		BFC027DE168E8B8100CE3F80 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027DB168E8B8100CE3F80 /* Default.png */; };
+		BFC027DF168E8B8100CE3F80 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027DC168E8B8100CE3F80 /* Default@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF1615D81685294500C9CB0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF1615951685294400C9CB0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF16159D1685294400C9CB0E;
+			remoteInfo = iOSRefresh;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BF16159E1685294400C9CB0E /* OtoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1615A21685294400C9CB0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BF1615A41685294400C9CB0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BF1615A61685294400C9CB0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BF1615D31685294500C9CB0E /* OtoTestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OtoTestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC0276C168E297600CE3F80 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		BFC027A9168E899500CE3F80 /* OtoTestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtoTestTests.h; sourceTree = "<group>"; };
+		BFC027AA168E899500CE3F80 /* OtoTestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtoTestTests.m; sourceTree = "<group>"; };
+		BFC027AD168E899500CE3F80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BFC027AE168E899500CE3F80 /* OtoTestTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OtoTestTests-Info.plist"; sourceTree = "<group>"; };
+		BFC027B1168E899500CE3F80 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BFC027B2168E899500CE3F80 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BFC027B4168E899500CE3F80 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		BFC027B5168E899500CE3F80 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		BFC027B6168E899500CE3F80 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		BFC027B7168E899500CE3F80 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		BFC027B8168E899500CE3F80 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		BFC027B9168E899500CE3F80 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		BFC027BC168E899500CE3F80 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		BFC027BD168E899500CE3F80 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		BFC027BE168E899500CE3F80 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		BFC027BF168E899500CE3F80 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		BFC027C2168E899500CE3F80 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		BFC027C3168E899500CE3F80 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		BFC027C5168E899500CE3F80 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BFC027C6168E899500CE3F80 /* OtoTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OtoTest-Info.plist"; sourceTree = "<group>"; };
+		BFC027C7168E899500CE3F80 /* OtoTest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OtoTest-Prefix.pch"; sourceTree = "<group>"; };
+		BFC027DA168E8B8100CE3F80 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BFC027DB168E8B8100CE3F80 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BFC027DC168E8B8100CE3F80 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF16159B1685294400C9CB0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF1615A31685294400C9CB0E /* UIKit.framework in Frameworks */,
+				BF1615A51685294400C9CB0E /* Foundation.framework in Frameworks */,
+				BF1615A71685294400C9CB0E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1615CF1685294500C9CB0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC0276E168E299C00CE3F80 /* SenTestingKit.framework in Frameworks */,
+				BF1615D61685294500C9CB0E /* UIKit.framework in Frameworks */,
+				BF1615D71685294500C9CB0E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF1615931685294400C9CB0E = {
+			isa = PBXGroup;
+			children = (
+				BFC027AF168E899500CE3F80 /* OtoTest */,
+				BFC027A8168E899500CE3F80 /* OtoTestTests */,
+				BF1615A11685294400C9CB0E /* Frameworks */,
+				BF16159F1685294400C9CB0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF16159F1685294400C9CB0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF16159E1685294400C9CB0E /* OtoTest.app */,
+				BF1615D31685294500C9CB0E /* OtoTestTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF1615A11685294400C9CB0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFC0276C168E297600CE3F80 /* SenTestingKit.framework */,
+				BF1615A21685294400C9CB0E /* UIKit.framework */,
+				BF1615A41685294400C9CB0E /* Foundation.framework */,
+				BF1615A61685294400C9CB0E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFC027A8168E899500CE3F80 /* OtoTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				BFC027A9168E899500CE3F80 /* OtoTestTests.h */,
+				BFC027AA168E899500CE3F80 /* OtoTestTests.m */,
+				BFC027AB168E899500CE3F80 /* SupportingFiles */,
+			);
+			path = OtoTestTests;
+			sourceTree = "<group>";
+		};
+		BFC027AB168E899500CE3F80 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BFC027AC168E899500CE3F80 /* InfoPlist.strings */,
+				BFC027AE168E899500CE3F80 /* OtoTestTests-Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		BFC027AF168E899500CE3F80 /* OtoTest */ = {
+			isa = PBXGroup;
+			children = (
+				BFC027B0168E899500CE3F80 /* AppDelegate */,
+				BFC027B3168E899500CE3F80 /* Controllers */,
+				BFC027C0168E899500CE3F80 /* Models */,
+				BFC027C1168E899500CE3F80 /* Storyboards */,
+				BFC027C4168E899500CE3F80 /* SupportingFiles */,
+				BFC027BA168E899500CE3F80 /* Images */,
+			);
+			path = OtoTest;
+			sourceTree = "<group>";
+		};
+		BFC027B0168E899500CE3F80 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BFC027B1168E899500CE3F80 /* AppDelegate.h */,
+				BFC027B2168E899500CE3F80 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		BFC027B3168E899500CE3F80 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFC027B4168E899500CE3F80 /* FirstViewController.h */,
+				BFC027B5168E899500CE3F80 /* FirstViewController.m */,
+				BFC027B6168E899500CE3F80 /* SecondViewController.h */,
+				BFC027B7168E899500CE3F80 /* SecondViewController.m */,
+				BFC027B8168E899500CE3F80 /* ThirdViewController.h */,
+				BFC027B9168E899500CE3F80 /* ThirdViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BFC027BA168E899500CE3F80 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BFC027DA168E8B8100CE3F80 /* Default-568h@2x.png */,
+				BFC027DB168E8B8100CE3F80 /* Default.png */,
+				BFC027DC168E8B8100CE3F80 /* Default@2x.png */,
+				BFC027BB168E899500CE3F80 /* TabBarItems */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		BFC027BB168E899500CE3F80 /* TabBarItems */ = {
+			isa = PBXGroup;
+			children = (
+				BFC027BC168E899500CE3F80 /* first.png */,
+				BFC027BD168E899500CE3F80 /* first@2x.png */,
+				BFC027BE168E899500CE3F80 /* second.png */,
+				BFC027BF168E899500CE3F80 /* second@2x.png */,
+			);
+			path = TabBarItems;
+			sourceTree = "<group>";
+		};
+		BFC027C0168E899500CE3F80 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BFC027C1168E899500CE3F80 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BFC027C2168E899500CE3F80 /* MainStoryboard_iPad.storyboard */,
+				BFC027C3168E899500CE3F80 /* MainStoryboard_iPhone.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BFC027C4168E899500CE3F80 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BFC027C5168E899500CE3F80 /* main.m */,
+				BFC027C6168E899500CE3F80 /* OtoTest-Info.plist */,
+				BFC027C7168E899500CE3F80 /* OtoTest-Prefix.pch */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF16159D1685294400C9CB0E /* OtoTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF1615E51685294500C9CB0E /* Build configuration list for PBXNativeTarget "OtoTest" */;
+			buildPhases = (
+				BF16159A1685294400C9CB0E /* Sources */,
+				BF16159B1685294400C9CB0E /* Frameworks */,
+				BF16159C1685294400C9CB0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OtoTest;
+			productName = iOSRefresh;
+			productReference = BF16159E1685294400C9CB0E /* OtoTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF1615D21685294500C9CB0E /* OtoTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF1615E81685294500C9CB0E /* Build configuration list for PBXNativeTarget "OtoTestTests" */;
+			buildPhases = (
+				BF1615CE1685294500C9CB0E /* Sources */,
+				BF1615CF1685294500C9CB0E /* Frameworks */,
+				BF1615D01685294500C9CB0E /* Resources */,
+				BF1615D11685294500C9CB0E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF1615D91685294500C9CB0E /* PBXTargetDependency */,
+			);
+			name = OtoTestTests;
+			productName = iOSRefreshTests;
+			productReference = BF1615D31685294500C9CB0E /* OtoTestTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF1615951685294400C9CB0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OT;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = alden;
+			};
+			buildConfigurationList = BF1615981685294400C9CB0E /* Build configuration list for PBXProject "OtoTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BF1615931685294400C9CB0E;
+			productRefGroup = BF16159F1685294400C9CB0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF16159D1685294400C9CB0E /* OtoTest */,
+				BF1615D21685294500C9CB0E /* OtoTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF16159C1685294400C9CB0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */,
+				BFC027CF168E899500CE3F80 /* first.png in Resources */,
+				BFC027D0168E899500CE3F80 /* first@2x.png in Resources */,
+				BFC027D1168E899500CE3F80 /* second.png in Resources */,
+				BFC027D2168E899500CE3F80 /* second@2x.png in Resources */,
+				BFC027D3168E899500CE3F80 /* MainStoryboard_iPad.storyboard in Resources */,
+				BFC027D4168E899500CE3F80 /* MainStoryboard_iPhone.storyboard in Resources */,
+				BFC027DD168E8B8100CE3F80 /* Default-568h@2x.png in Resources */,
+				BFC027DE168E8B8100CE3F80 /* Default.png in Resources */,
+				BFC027DF168E8B8100CE3F80 /* Default@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1615D01685294500C9CB0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BF1615D11685294500C9CB0E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF16159A1685294400C9CB0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC027CB168E899500CE3F80 /* AppDelegate.m in Sources */,
+				BFC027CC168E899500CE3F80 /* FirstViewController.m in Sources */,
+				BFC027CD168E899500CE3F80 /* SecondViewController.m in Sources */,
+				BFC027CE168E899500CE3F80 /* ThirdViewController.m in Sources */,
+				BFC027D5168E899500CE3F80 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1615CE1685294500C9CB0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC027D7168E8A1000CE3F80 /* OtoTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF1615D91685294500C9CB0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF16159D1685294400C9CB0E /* OtoTest */;
+			targetProxy = BF1615D81685294500C9CB0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BFC027AC168E899500CE3F80 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFC027AD168E899500CE3F80 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF1615E31685294500C9CB0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF1615E41685294500C9CB0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF1615E61685294500C9CB0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OtoTest/SupportingFiles/OtoTest-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/OtoTest/SupportingFiles/OtoTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = OtoTest;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BF1615E71685294500C9CB0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OtoTest/SupportingFiles/OtoTest-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/OtoTest/SupportingFiles/OtoTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = OtoTest;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BF1615E91685294500C9CB0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OtoTest.app/OtoTest";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OtoTest/SupportingFiles/OtoTest-Prefix.pch";
+				INFOPLIST_FILE = "OtoTestTests/SupportingFiles/OtoTestTests-Info.plist";
+				PRODUCT_NAME = OtoTestTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		BF1615EA1685294500C9CB0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OtoTest.app/OtoTest";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OtoTest/SupportingFiles/OtoTest-Prefix.pch";
+				INFOPLIST_FILE = "OtoTestTests/SupportingFiles/OtoTestTests-Info.plist";
+				PRODUCT_NAME = OtoTestTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF1615981685294400C9CB0E /* Build configuration list for PBXProject "OtoTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1615E31685294500C9CB0E /* Debug */,
+				BF1615E41685294500C9CB0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF1615E51685294500C9CB0E /* Build configuration list for PBXNativeTarget "OtoTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1615E61685294500C9CB0E /* Debug */,
+				BF1615E71685294500C9CB0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF1615E81685294500C9CB0E /* Build configuration list for PBXNativeTarget "OtoTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF1615E91685294500C9CB0E /* Debug */,
+				BF1615EA1685294500C9CB0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF1615951685294400C9CB0E /* Project object */;
+}
