@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="FrequencyResult" representedClassName="FrequencyResult" syncable="YES">
+        <attribute name="freqHz" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="vol" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="result" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="frequencyResults" inverseEntity="Result" syncable="YES"/>
+    </entity>
+    <entity name="Result" representedClassName="Result" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="frequencyResults" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FrequencyResult" inverseName="result" inverseEntity="FrequencyResult" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Result" positionX="-63" positionY="585" width="128" height="73"/>
+        <element name="FrequencyResult" positionX="151" positionY="704" width="128" height="88"/>
+    </elements>
+</model>

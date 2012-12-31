@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OTViewController.h"
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : OTViewController
 
 @end

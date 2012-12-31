@@ -16,7 +16,15 @@
 
 - (IBAction)begin:(UIButton *)sender {
   
-  NSLog(@"begin pressed, in %s", __PRETTY_FUNCTION__);
+  Result *result = (Result *)[NSEntityDescription insertNewObjectForEntityForName:@"Result"
+                                                  inManagedObjectContext:self.managedObjectContext];
+  result.date = [NSDate date];
+  
+  NSError *error = nil;
+  if (![self.managedObjectContext save:&error]) {
+    NSLog(@"Failed to save MOC");
+  }
+  
   
 }
 
