@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 alden. All rights reserved.
 //
 
-#import "Result.h"
-#import "FrequencyResult.h"
+#import "OTResult.h"
+#import "OTFrequencyResult.h"
 
 
-@implementation Result
+@implementation OTResult
 
 @dynamic date;
 @dynamic frequencyResults;

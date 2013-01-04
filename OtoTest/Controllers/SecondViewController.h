@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import "OTViewController.h"
 
-@interface SecondViewController : OTViewController
+@interface SecondViewController : OTViewController <MFMailComposeViewControllerDelegate>
+
+- (IBAction)presentMailer:(id)sender;
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error;
 
 @end

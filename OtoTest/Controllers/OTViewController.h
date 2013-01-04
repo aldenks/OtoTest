@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Models.h"
 
 @interface OTViewController : UIViewController
 

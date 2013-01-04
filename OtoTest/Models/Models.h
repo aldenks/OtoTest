@@ -9,7 +9,7 @@
 #ifndef OtoTest_Models_h
 #define OtoTest_Models_h
 
-#import "Result.h"
-#import "FrequencyResult.h"
+#import "OTResult.h"
+#import "OTFrequencyResult.h"
 
 #endif

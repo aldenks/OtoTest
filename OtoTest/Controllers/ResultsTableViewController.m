@@ -78,7 +78,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  Result *result = [results objectAtIndex:indexPath.row];
+  OTResult *result = [results objectAtIndex:indexPath.row];
   
   static NSDateFormatter *dateFormatter = nil;
   if (dateFormatter == nil) {

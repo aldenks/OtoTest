@@ -12,6 +12,7 @@
 		BF1615A71685294400C9CB0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A61685294400C9CB0E /* CoreGraphics.framework */; };
 		BF1615D61685294500C9CB0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A21685294400C9CB0E /* UIKit.framework */; };
 		BF1615D71685294500C9CB0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A41685294400C9CB0E /* Foundation.framework */; };
+		BF3867D81696CEE600D46E58 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3867D71696CEE600D46E58 /* MessageUI.framework */; };
 		BFC0276E168E299C00CE3F80 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC0276C168E297600CE3F80 /* SenTestingKit.framework */; };
 		BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC027AC168E899500CE3F80 /* InfoPlist.strings */; };
 		BFC027CB168E899500CE3F80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B2168E899500CE3F80 /* AppDelegate.m */; };
@@ -35,12 +36,15 @@
 		BFC027EC168F603400CE3F80 /* 16000Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E5168F603400CE3F80 /* 16000Hz.mp3 */; };
 		BFC027ED168F603400CE3F80 /* 8000Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E6168F603400CE3F80 /* 8000Hz.mp3 */; };
 		BFC027EE168F603400CE3F80 /* 9000Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E7168F603400CE3F80 /* 9000Hz.mp3 */; };
-		BFC027FA16905A0500CE3F80 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027F916905A0500CE3F80 /* Result.m */; };
-		BFC027FD16905A0600CE3F80 /* FrequencyResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027FC16905A0600CE3F80 /* FrequencyResult.m */; };
+		BFC027FD16905A0600CE3F80 /* OTFrequencyResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027FC16905A0600CE3F80 /* OTFrequencyResult.m */; };
 		BFC02830169105F300CE3F80 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC0282F169105F200CE3F80 /* CoreData.framework */; };
 		BFC0283416912A0200CE3F80 /* OtoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFC0283216912A0200CE3F80 /* OtoTest.xcdatamodeld */; };
 		BFC0283F16917C5700CE3F80 /* OTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0283E16917C5600CE3F80 /* OTViewController.m */; };
 		BFC028431691889000CE3F80 /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC028421691888F00CE3F80 /* ResultsTableViewController.m */; };
+		BFC02845169275E700CE3F80 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC02844169275E700CE3F80 /* AVFoundation.framework */; };
+		BFC0284916945ABF00CE3F80 /* NSArray-Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0284816945ABF00CE3F80 /* NSArray-Blocks.m */; };
+		BFC0284D1694D29F00CE3F80 /* OTShared.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0284C1694D29F00CE3F80 /* OTShared.m */; };
+		BFC0284F169525B000CE3F80 /* OTResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0284E169525AF00CE3F80 /* OTResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,7 @@
 		BF1615A41685294400C9CB0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF1615A61685294400C9CB0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BF1615D31685294500C9CB0E /* OtoTestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OtoTestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF3867D71696CEE600D46E58 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		BFC0276C168E297600CE3F80 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BFC027A9168E899500CE3F80 /* OtoTestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtoTestTests.h; sourceTree = "<group>"; };
 		BFC027AA168E899500CE3F80 /* OtoTestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtoTestTests.m; sourceTree = "<group>"; };
@@ -89,10 +94,9 @@
 		BFC027E5168F603400CE3F80 /* 16000Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 16000Hz.mp3; sourceTree = "<group>"; };
 		BFC027E6168F603400CE3F80 /* 8000Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8000Hz.mp3; sourceTree = "<group>"; };
 		BFC027E7168F603400CE3F80 /* 9000Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9000Hz.mp3; sourceTree = "<group>"; };
-		BFC027F816905A0500CE3F80 /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
-		BFC027F916905A0500CE3F80 /* Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Result.m; sourceTree = "<group>"; };
-		BFC027FB16905A0600CE3F80 /* FrequencyResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequencyResult.h; sourceTree = "<group>"; };
-		BFC027FC16905A0600CE3F80 /* FrequencyResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequencyResult.m; sourceTree = "<group>"; };
+		BFC027F816905A0500CE3F80 /* OTResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTResult.h; sourceTree = "<group>"; };
+		BFC027FB16905A0600CE3F80 /* OTFrequencyResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTFrequencyResult.h; sourceTree = "<group>"; };
+		BFC027FC16905A0600CE3F80 /* OTFrequencyResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTFrequencyResult.m; sourceTree = "<group>"; };
 		BFC0282F169105F200CE3F80 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BFC0283316912A0200CE3F80 /* OtoTest0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OtoTest0.xcdatamodel; sourceTree = "<group>"; };
 		BFC0283D16917C5600CE3F80 /* OTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTViewController.h; sourceTree = "<group>"; };
@@ -100,6 +104,12 @@
 		BFC02840169180E000CE3F80 /* Models.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		BFC028411691888F00CE3F80 /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
 		BFC028421691888F00CE3F80 /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
+		BFC02844169275E700CE3F80 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BFC0284716945ABF00CE3F80 /* NSArray-Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray-Blocks.h"; sourceTree = "<group>"; };
+		BFC0284816945ABF00CE3F80 /* NSArray-Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray-Blocks.m"; sourceTree = "<group>"; };
+		BFC0284B1694D29F00CE3F80 /* OTShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTShared.h; sourceTree = "<group>"; };
+		BFC0284C1694D29F00CE3F80 /* OTShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTShared.m; sourceTree = "<group>"; };
+		BFC0284E169525AF00CE3F80 /* OTResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +117,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3867D81696CEE600D46E58 /* MessageUI.framework in Frameworks */,
+				BFC02845169275E700CE3F80 /* AVFoundation.framework in Frameworks */,
 				BFC02830169105F300CE3F80 /* CoreData.framework in Frameworks */,
 				BF1615A31685294400C9CB0E /* UIKit.framework in Frameworks */,
 				BF1615A51685294400C9CB0E /* Foundation.framework in Frameworks */,
@@ -149,6 +161,8 @@
 		BF1615A11685294400C9CB0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF3867D71696CEE600D46E58 /* MessageUI.framework */,
+				BFC02844169275E700CE3F80 /* AVFoundation.framework */,
 				BFC0282F169105F200CE3F80 /* CoreData.framework */,
 				BFC0276C168E297600CE3F80 /* SenTestingKit.framework */,
 				BF1615A21685294400C9CB0E /* UIKit.framework */,
@@ -184,6 +198,7 @@
 				BFC027B3168E899500CE3F80 /* Controllers */,
 				BFC027C0168E899500CE3F80 /* Models */,
 				BFC027C1168E899500CE3F80 /* Storyboards */,
+				BFC0284616945ABE00CE3F80 /* Helpers */,
 				BFC027C4168E899500CE3F80 /* SupportingFiles */,
 				BFC027BA168E899500CE3F80 /* Images */,
 				BFC027E0168F603300CE3F80 /* Sounds */,
@@ -241,10 +256,10 @@
 			isa = PBXGroup;
 			children = (
 				BFC02840169180E000CE3F80 /* Models.h */,
-				BFC027FB16905A0600CE3F80 /* FrequencyResult.h */,
-				BFC027FC16905A0600CE3F80 /* FrequencyResult.m */,
-				BFC027F816905A0500CE3F80 /* Result.h */,
-				BFC027F916905A0500CE3F80 /* Result.m */,
+				BFC027F816905A0500CE3F80 /* OTResult.h */,
+				BFC0284E169525AF00CE3F80 /* OTResult.m */,
+				BFC027FB16905A0600CE3F80 /* OTFrequencyResult.h */,
+				BFC027FC16905A0600CE3F80 /* OTFrequencyResult.m */,
 				BFC0283216912A0200CE3F80 /* OtoTest.xcdatamodeld */,
 			);
 			path = Models;
@@ -281,6 +296,17 @@
 				BFC027E7168F603400CE3F80 /* 9000Hz.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		BFC0284616945ABE00CE3F80 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BFC0284716945ABF00CE3F80 /* NSArray-Blocks.h */,
+				BFC0284816945ABF00CE3F80 /* NSArray-Blocks.m */,
+				BFC0284B1694D29F00CE3F80 /* OTShared.h */,
+				BFC0284C1694D29F00CE3F80 /* OTShared.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,11 +435,13 @@
 				BFC027CC168E899500CE3F80 /* FirstViewController.m in Sources */,
 				BFC027CD168E899500CE3F80 /* SecondViewController.m in Sources */,
 				BFC027D5168E899500CE3F80 /* main.m in Sources */,
-				BFC027FA16905A0500CE3F80 /* Result.m in Sources */,
-				BFC027FD16905A0600CE3F80 /* FrequencyResult.m in Sources */,
+				BFC027FD16905A0600CE3F80 /* OTFrequencyResult.m in Sources */,
 				BFC0283416912A0200CE3F80 /* OtoTest.xcdatamodeld in Sources */,
 				BFC0283F16917C5700CE3F80 /* OTViewController.m in Sources */,
 				BFC028431691889000CE3F80 /* ResultsTableViewController.m in Sources */,
+				BFC0284916945ABF00CE3F80 /* NSArray-Blocks.m in Sources */,
+				BFC0284D1694D29F00CE3F80 /* OTShared.m in Sources */,
+				BFC0284F169525B000CE3F80 /* OTResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

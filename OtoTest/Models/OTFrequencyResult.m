@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 alden. All rights reserved.
 //
 
-#import "FrequencyResult.h"
-#import "Result.h"
+#import "OTFrequencyResult.h"
+#import "OTResult.h"
 
 
-@implementation FrequencyResult
+@implementation OTFrequencyResult
 
 @dynamic freqHz;
 @dynamic vol;

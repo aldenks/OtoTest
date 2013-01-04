@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "OTViewController.h"
-
 
 @implementation AppDelegate
 
@@ -19,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
   
   UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
   for (OTViewController *vc in [tabBarController viewControllers])

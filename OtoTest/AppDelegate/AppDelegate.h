@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVAudioSession.h>
+#import "OTViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
