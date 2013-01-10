@@ -10,7 +10,7 @@
         <relationship name="frequencyResults" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OTFrequencyResult" inverseName="result" inverseEntity="OTFrequencyResult" syncable="YES"/>
     </entity>
     <elements>
-        <element name="OTFrequencyResult" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="OTResult" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="OTFrequencyResult" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="OTResult" positionX="-263" positionY="-81" width="128" height="75"/>
     </elements>
 </model>

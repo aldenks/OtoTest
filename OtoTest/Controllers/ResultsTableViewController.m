@@ -42,7 +42,7 @@
   [super viewWillAppear:animated];
   
   NSFetchRequest *request = [[NSFetchRequest alloc] init];
-  request.entity = [NSEntityDescription entityForName:@"Result" inManagedObjectContext:self.managedObjectContext];
+  request.entity = [NSEntityDescription entityForName:@"OTResult" inManagedObjectContext:self.managedObjectContext];
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
   [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
   
@@ -50,9 +50,9 @@
   NSMutableArray *fetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
   if (fetchResults == nil) {
     // Handle the error.
+    return;
   }
   self.results = fetchResults;
-  
   [self.tableView reloadData];
 }
 

@@ -5,52 +5,29 @@
 //  Created by alden on 12/21/12.
 //  Copyright (c) 2012 alden. All rights reserved.
 //
+//  This controller administrates the Hughson-Westlake hearing test procedure.
+//  A good flowchart of this test is available at
+//  http://www.who.int/occupational_health/publications/noise8.pdf
+//  on page 194, although the decible increments are slightly different here.
 
 #import "FirstViewController.h"
 
-#define INTER_TONE_TIME 3.0
-#define RECOGNITION_WINDOW 3.0
-
 @interface FirstViewController ()
-
-@property AVAudioPlayer *player;
-@property OTResult *result;      // The result object for the current test
-
-@property NSDate *lastToneTime;      // time at which the most recent tone was played
-@property BOOL heardLastTone;    // has user heard most recent tone
 
 @end
 
 @implementation FirstViewController
 
-@synthesize player;
-
-- (IBAction)beginTest:(UIButton *)sender {
-  
-  
-  OTResult *result = (OTResult *)[NSEntityDescription insertNewObjectForEntityForName:@"OTResult"
-                                                               inManagedObjectContext:self.managedObjectContext];
-  result.date = [NSDate date];
-  
-  // TODO handle error
-  NSError *error = nil;
-  if (![self.managedObjectContext save:&error]) {
-    NSLog(@"Failed to save MOC");
-  }
-}
-
-
-- (IBAction)soundButtonPressed:(UIButton *)sender {
-  for (NSString *fileName in [OTShared toneFiles]) {
-    [self playAudioResource:fileName withExtension:@"mp3"];
-    sleep(1);
-  }
-}
-
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  self.frequencies = [OTShared toneFiles];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidUnload {
+  [self setHeardItButton:nil];
+  [super viewDidUnload];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,26 +37,144 @@
 }
 
 #pragma mark -
-#pragma mark Audio
+#pragma mark Testing 
 
-- (void)playAudioResource:(NSString *)resource withExtension:(NSString *)ext {
-  NSURL *soundURL = [[NSBundle mainBundle] URLForResource:resource withExtension:ext];
-  // TODO handle error
-  self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
-  [self.player play];
+// Main test function. called once every INTER_TONE_TIME seconds
+- (void)doToneForTest
+{
+  if (self.testPhase == OTTestPhaseSecond && self.lastToneWentUp) {
+    // maintain a history of the 3 most recent "heard it?" results for acending tones
+    if (self.toneHeardHistory.count > 2)
+      [self.toneHeardHistory removeObjectAtIndex:0];
+    [self.toneHeardHistory addObject:[NSNumber numberWithBool:self.heardLastTone]];
+    NSLog(@"heard history:%@", self.toneHeardHistory);
+  }
+  
+  if (self.heardLastTone) {
+    if ([self isDoneWithFrequency]) {
+      NSLog(@"done with frequency");
+      [self finishFrequency];
+      // TODO do next frequency or finish test
+      return;
+    } else {
+      if (self.testPhase == OTTestPhaseFirst) {
+        NSLog(@"Entering 2nd phase");
+      }
+      NSLog(@"heard it, but not done with frequency: decreasing vol by %f", DECREASE_DB_AMT);
+      self.dBVolume -= DECREASE_DB_AMT;
+      self.lastToneWentUp = NO;
+      self.testPhase = OTTestPhaseSecond;
+    }
+  }
+  else {
+    double dBIncrease = self.testPhase == OTTestPhaseFirst ? FIRST_INCREASE_DB_AMT : SECOND_INCREASE_DB_AMT;
+    self.dBVolume += dBIncrease;
+    self.lastToneWentUp = YES;
+    NSLog(@"didn't hear it, increasing vol by %f", dBIncrease);
+  }
+  
+  if ([self volumeFromDecibles:self.dBVolume] > 1.0) {
+    //TODO fail test
+    [NSException raise:@"Implement Me" format:@"volume above max"];
+  }
+  
+  [self playCurrentTone];
+  self.heardLastTone = NO;
+  self.lastToneTime  = [NSDate date];
+  [self performSelector:@selector(doToneForTest) withObject:nil afterDelay:INTER_TONE_TIME];
+}
+
+- (BOOL)isDoneWithFrequency
+{
+  if (self.testPhase != OTTestPhaseSecond)
+    return NO;
+  NSArray *ayes = [self.toneHeardHistory select:^(id heard, NSUInteger idx) {
+    return [heard boolValue];
+  }];
+  return [ayes count] >= 2;
+}
+
+- (void)beginNextFrequency
+{
+  self.frequencyIndex++;
+  self.testPhase = OTTestPhaseFirst;
+  self.dBVolume = INITIAL_DB;
+  self.lastToneTime = nil;
+  self.lastToneWentUp = NO;
+  self.heardLastTone = NO;
+  self.toneHeardHistory = [NSMutableArray arrayWithCapacity:3];
+  
+  [self doToneForTest];
+}
+
+- (void)finishFrequency
+{
+  [self finishTest];
+}
+
+- (void)finishTest
+{
+  self.heardItButton.hidden = YES;
 }
 
 #pragma mark -
-#pragma mark Accessors
+#pragma mark Actions
 
-//- (AVAudioPlayer *)player
-//{
-//  if (!_player) {
-//    NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"9000Hz" withExtension:@"mp3"];
-//    _player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+- (IBAction)beginTest
+{
+  OTResult *result = (OTResult *)[NSEntityDescription insertNewObjectForEntityForName:@"OTResult"
+                                                               inManagedObjectContext:self.managedObjectContext];
+  result.date = [NSDate date];
+  self.result = result;
+  self.frequencyIndex = INITIAL_FREQ_IDX;
+  self.heardItButton.hidden = NO;
+  [self beginNextFrequency];
+  
+//  self.heardLastTone 
+  // TODO handle error
+//  NSError *error = nil;
+//  if (![self.managedObjectContext save:&error]) {
+//    NSLog(@"Failed to save MOC");
 //  }
-//  return _player;
-//}
+}
+
+- (IBAction)heardTone
+{
+  if (([self.lastToneTime timeIntervalSinceNow]*-1) <= RECOGNITION_WINDOW) 
+    self.heardLastTone = YES;
+}
+
+- (IBAction)soundButtonPressed:(UIButton *)sender {
+  self.dBVolume = 100;
+  for (NSString *fileName in [OTShared toneFiles]) {
+    [self playAudioResource:fileName withExtension:@"mp3"];
+    sleep(1);
+  }
+}
+
+#pragma mark -
+#pragma mark Audio
+
+- (void)playCurrentTone
+{
+  NSString *resource = [self.frequencies objectAtIndex:self.frequencyIndex];
+  [self playAudioResource:resource withExtension:@"mp3"];
+}
+
+- (void)playAudioResource:(NSString *)resource withExtension:(NSString *)ext
+{
+  NSURL *soundURL = [[NSBundle mainBundle] URLForResource:resource withExtension:ext];
+  // TODO handle error
+  self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
+  self.player.volume = [self volumeFromDecibles:self.dBVolume];
+  [self.player play];
+}
+
+- (double)volumeFromDecibles:(double)decibles
+{
+  // TODO find actual ratio
+  return decibles/100.0;
+}
 
 @end
   

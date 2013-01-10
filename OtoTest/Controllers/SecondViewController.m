@@ -49,7 +49,6 @@
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-  NSLog(@"compose result: %u", result);
   if (result == MFMailComposeResultFailed) {
     NSString *msg = [NSString stringWithFormat:@"Sorry :( The error is: %@", [error localizedDescription]];
     [[[UIAlertView alloc] initWithTitle:@"Oh No! Sending Failed" message:msg

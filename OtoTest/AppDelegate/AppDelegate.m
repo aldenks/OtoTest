@@ -20,8 +20,10 @@
   [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
   
   UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-  for (OTViewController *vc in [tabBarController viewControllers])
-    vc.managedObjectContext = self.managedObjectContext;
+  for (id vc in [tabBarController viewControllers]) {
+    if ([vc respondsToSelector:@selector(setManagedObjectContext:)])
+      [vc setManagedObjectContext:self.managedObjectContext];
+  }
   // Override point for customization after application launch.
   return YES;
 }
@@ -92,7 +94,7 @@
   if (_managedObjectModel != nil) {
     return _managedObjectModel;
   }
-  NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
+  NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"OtoTest" withExtension:@"momd"];
   _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
   return _managedObjectModel;
 }

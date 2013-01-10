@@ -13,7 +13,7 @@
 
 @interface OTResult : NSManagedObject
 
-@property (nonatomic, strong) NSDate * date;
+@property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSSet *frequencyResults;
 @end
 
