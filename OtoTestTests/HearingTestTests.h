@@ -7,7 +7,7 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "FirstViewController.h"
+#import "TestViewController.h"
 
 @interface HearingTestTests : SenTestCase
 

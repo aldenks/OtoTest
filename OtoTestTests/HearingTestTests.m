@@ -12,7 +12,7 @@
 
 - (void)testIsDoneWithFrequency
 {
-  FirstViewController *vc = [[FirstViewController alloc] init];
+  TestViewController *vc = [[TestViewController alloc] init];
   NSNumber *tru  = [NSNumber numberWithBool:YES];
   NSNumber *fals = [NSNumber numberWithBool:NO];
   vc.testPhase = OTTestPhaseSecond;

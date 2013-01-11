@@ -10,13 +10,13 @@
 //  http://www.who.int/occupational_health/publications/noise8.pdf
 //  on page 194, although the decible increments are slightly different here.
 
-#import "FirstViewController.h"
+#import "TestViewController.h"
 
-@interface FirstViewController ()
+@interface TestViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation TestViewController
 
 - (void)viewDidLoad
 {
@@ -137,6 +137,8 @@
 
   self.heardItButton.hidden = YES;
 
+  // TODO clean up other vars
+
   // allow self.result and its related frequency results to be released
   [self.managedObjectContext refreshObject:self.result mergeChanges:NO];
   self.result = nil;
@@ -153,21 +155,14 @@
   self.result = result;
   self.frequencyIndex = INITIAL_FREQ_IDX;
   self.heardItButton.hidden = NO;
-  [self beginNextFrequency];
+  // return control to UI before starting test so its responsive
+  [self performSelector:@selector(beginNextFrequency) withObject:nil afterDelay:0];
 }
 
 - (IBAction)heardTone
 {
-  if (([self.lastToneTime timeIntervalSinceNow]*-1) <= RECOGNITION_WINDOW) 
+  if (self.lastToneTime && ([self.lastToneTime timeIntervalSinceNow]*-1) <= RECOGNITION_WINDOW) 
     self.heardLastTone = YES;
-}
-
-- (IBAction)soundButtonPressed:(UIButton *)sender {
-  self.dBVolume = 100;
-  for (NSString *fileName in [OTShared toneFiles]) {
-    [self playAudioResource:fileName withExtension:@"mp3"];
-    sleep(1);
-  }
 }
 
 #pragma mark -

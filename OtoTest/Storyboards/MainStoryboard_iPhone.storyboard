@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--First View Controller - First-->
+        <!--Test View Controller - First-->
         <scene sceneID="11">
             <objects>
-                <viewController title="First" id="2" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController title="First" id="2" customClass="TestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,8 +21,8 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Im-ST-H7d">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="152" id="Qcu-8h-33j"/>
                                     <constraint firstAttribute="height" constant="74" id="bU3-hM-0vi"/>
+                                    <constraint firstAttribute="width" constant="176" id="qP5-SY-zWH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="Begin Test">
@@ -60,7 +60,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6Im-ST-H7d" firstAttribute="centerX" secondItem="21" secondAttribute="centerX" type="default" id="2Cq-cG-Klv"/>
                             <constraint firstItem="21" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="4rG-H6-5gM"/>
                             <constraint firstItem="kr1-wo-rMh" firstAttribute="top" secondItem="muY-2y-5O6" secondAttribute="bottom" constant="20" type="user" id="QUY-3K-leQ"/>
                             <constraint firstItem="muY-2y-5O6" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="cdm-9X-hka"/>
@@ -69,13 +68,14 @@
                             <constraint firstItem="kr1-wo-rMh" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="oZK-2j-t5E"/>
                             <constraint firstItem="6Im-ST-H7d" firstAttribute="top" secondItem="16" secondAttribute="top" constant="197" id="qlL-7K-FIw"/>
                             <constraint firstItem="muY-2y-5O6" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="svW-ex-UF3"/>
+                            <constraint firstItem="21" firstAttribute="centerX" secondItem="6Im-ST-H7d" secondAttribute="centerX" type="default" id="tJ8-Ng-U00"/>
                             <constraint firstAttribute="bottom" secondItem="kr1-wo-rMh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="waQ-Id-wbK"/>
                             <constraint firstItem="21" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="wsf-nJ-zuT"/>
                             <constraint firstAttribute="trailing" secondItem="kr1-wo-rMh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="zG9-aC-bGg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Test" image="first" id="7"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
                         <outlet property="heardItButton" destination="kr1-wo-rMh" id="ZmJ-PB-DNn"/>
                     </connections>
@@ -204,7 +204,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="665-fi-nkL" customClass="ResultsNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Results" image="second" id="0NU-aH-BUX"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uMu-lW-2ua">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -241,14 +241,6 @@
         <image name="second" width="16" height="16"/>
     </resources>
     <classes>
-        <class className="FirstViewController" superclassName="OTViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="beginTest"/>
-                <relationship kind="action" name="heardTone"/>
-                <relationship kind="outlet" name="heardItButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
@@ -266,6 +258,14 @@
         </class>
         <class className="ResultsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsTableViewController.h"/>
+        </class>
+        <class className="TestViewController" superclassName="OTViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="beginTest"/>
+                <relationship kind="action" name="heardTone"/>
+                <relationship kind="outlet" name="heardItButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

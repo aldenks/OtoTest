@@ -27,7 +27,7 @@ typedef enum {
   OTTestPhaseSecond, // narowing on and finding the threshold
 } OTTestPhase;
 
-@interface FirstViewController : OTViewController
+@interface TestViewController : OTViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *heardItButton;
 

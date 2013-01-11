@@ -166,7 +166,8 @@
   }
   [mailer setMailComposeDelegate:self];
   [mailer setSubject:subject];
-  [mailer setToRecipients:@[@"aldenkeefesampson@gmail.com"]];
+  // TODO real email
+  [mailer setToRecipients:@[@"results@test.org"]];
   [mailer setMessageBody:body isHTML:NO];
   [self presentViewController:mailer animated:YES completion:nil];
 }
