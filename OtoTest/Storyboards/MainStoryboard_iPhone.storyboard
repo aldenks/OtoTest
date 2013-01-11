@@ -12,26 +12,20 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="20">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the first view controller — an instance of FirstViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Made with love by Alden Keefe Sampson with the help of Leah Martin" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="A5j-Oa-iP2"/>
+                                    <constraint firstAttribute="height" constant="29" id="bJe-nl-VfD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="10"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Im-ST-H7d">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="e0x-oU-HKX"/>
-                                    <constraint firstAttribute="width" constant="94" id="erW-Yx-FQb"/>
+                                    <constraint firstAttribute="width" constant="152" id="Qcu-8h-33j"/>
+                                    <constraint firstAttribute="height" constant="74" id="bU3-hM-0vi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" title="Begin">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <state key="normal" title="Begin Test">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -40,22 +34,6 @@
                                 </state>
                                 <connections>
                                     <action selector="beginTest" destination="2" eventType="touchUpInside" id="mPt-Ki-ILJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLq-Kv-gAR">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="149" id="Mhc-ub-NM4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Play Sound">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="soundButtonPressed:" destination="2" eventType="touchUpInside" id="rca-I0-gOQ"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr1-wo-rMh">
@@ -71,26 +49,33 @@
                                     <action selector="heardTone" destination="2" eventType="touchUpInside" id="lDd-xj-fWM"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muY-2y-5O6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HX2-MY-bRy"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Hearing Test" id="AZW-Ho-fkB"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tLq-Kv-gAR" firstAttribute="centerX" secondItem="6Im-ST-H7d" secondAttribute="centerX" type="default" id="4Ez-ms-2P5"/>
-                            <constraint firstItem="tLq-Kv-gAR" firstAttribute="top" secondItem="21" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5pv-hx-Fst"/>
-                            <constraint firstItem="kr1-wo-rMh" firstAttribute="top" secondItem="16" secondAttribute="top" constant="20" symbolic="YES" type="default" id="DsI-YJ-Fbw"/>
-                            <constraint firstAttribute="trailing" secondItem="kr1-wo-rMh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="P5l-lj-fJN"/>
-                            <constraint firstItem="6Im-ST-H7d" firstAttribute="top" secondItem="tLq-Kv-gAR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Pij-Ll-ywT"/>
-                            <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="QBg-X6-fBV"/>
-                            <constraint firstAttribute="trailing" secondItem="20" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Qxj-1L-2Yh"/>
-                            <constraint firstItem="20" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ty9-wx-CyI"/>
-                            <constraint firstAttribute="bottom" secondItem="kr1-wo-rMh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="XU4-wT-TA3"/>
-                            <constraint firstItem="21" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Zmm-k2-2L7"/>
-                            <constraint firstItem="21" firstAttribute="top" secondItem="20" secondAttribute="bottom" constant="40" type="user" id="jX0-Wi-kmb"/>
-                            <constraint firstItem="tLq-Kv-gAR" firstAttribute="centerX" secondItem="21" secondAttribute="centerX" type="default" id="o5g-VM-YpE"/>
-                            <constraint firstItem="kr1-wo-rMh" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="phA-tM-QjU"/>
-                            <constraint firstAttribute="centerY" secondItem="21" secondAttribute="centerY" type="user" id="yWk-L2-m9F"/>
+                            <constraint firstItem="6Im-ST-H7d" firstAttribute="centerX" secondItem="21" secondAttribute="centerX" type="default" id="2Cq-cG-Klv"/>
+                            <constraint firstItem="21" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="4rG-H6-5gM"/>
+                            <constraint firstItem="kr1-wo-rMh" firstAttribute="top" secondItem="muY-2y-5O6" secondAttribute="bottom" constant="20" type="user" id="QUY-3K-leQ"/>
+                            <constraint firstItem="muY-2y-5O6" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="cdm-9X-hka"/>
+                            <constraint firstItem="muY-2y-5O6" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="fQs-xM-bfh"/>
+                            <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="gw6-pM-IOo"/>
+                            <constraint firstItem="kr1-wo-rMh" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="oZK-2j-t5E"/>
+                            <constraint firstItem="6Im-ST-H7d" firstAttribute="top" secondItem="16" secondAttribute="top" constant="197" id="qlL-7K-FIw"/>
+                            <constraint firstItem="muY-2y-5O6" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="svW-ex-UF3"/>
+                            <constraint firstAttribute="bottom" secondItem="kr1-wo-rMh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="waQ-Id-wbK"/>
+                            <constraint firstItem="21" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="wsf-nJ-zuT"/>
+                            <constraint firstAttribute="trailing" secondItem="kr1-wo-rMh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="zG9-aC-bGg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Test" image="first" id="7"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="heardItButton" destination="kr1-wo-rMh" id="ZmJ-PB-DNn"/>
                     </connections>
@@ -219,6 +204,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="665-fi-nkL" customClass="ResultsNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Results" image="second" id="0NU-aH-BUX"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uMu-lW-2ua">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -260,7 +246,6 @@
             <relationships>
                 <relationship kind="action" name="beginTest"/>
                 <relationship kind="action" name="heardTone"/>
-                <relationship kind="action" name="soundButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="heardItButton" candidateClass="UIButton"/>
             </relationships>
         </class>
