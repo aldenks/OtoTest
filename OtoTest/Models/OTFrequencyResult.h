@@ -13,8 +13,8 @@
 
 @interface OTFrequencyResult : NSManagedObject
 
-@property (nonatomic, strong) NSNumber *freqHz;
-@property (nonatomic, strong) NSNumber *vol;
-@property (nonatomic, weak)   OTResult *result;
+@property (nonatomic, strong) NSString *freq;
+@property (nonatomic, strong) NSNumber *dB;
+@property (nonatomic, strong) OTResult *result;
 
 @end

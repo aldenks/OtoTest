@@ -44,7 +44,7 @@
 {
   if (self.testPhase == OTTestPhaseSecond && self.lastToneWentUp) {
     // maintain a history of the 3 most recent "heard it?" results for acending tones
-    if (self.toneHeardHistory.count > 2)
+    if (self.toneHeardHistory.count > 3)
       [self.toneHeardHistory removeObjectAtIndex:0];
     [self.toneHeardHistory addObject:[NSNumber numberWithBool:self.heardLastTone]];
     NSLog(@"heard history:%@", self.toneHeardHistory);
@@ -54,7 +54,6 @@
     if ([self isDoneWithFrequency]) {
       NSLog(@"done with frequency");
       [self finishFrequency];
-      // TODO do next frequency or finish test
       return;
     } else {
       if (self.testPhase == OTTestPhaseFirst) {
@@ -97,24 +96,50 @@
 - (void)beginNextFrequency
 {
   self.frequencyIndex++;
-  self.testPhase = OTTestPhaseFirst;
-  self.dBVolume = INITIAL_DB;
-  self.lastToneTime = nil;
-  self.lastToneWentUp = NO;
-  self.heardLastTone = NO;
-  self.toneHeardHistory = [NSMutableArray arrayWithCapacity:3];
-  
-  [self doToneForTest];
+  if (self.frequencyIndex < [self.frequencies count]) {
+    self.testPhase = OTTestPhaseFirst;
+    self.dBVolume = INITIAL_DB;
+    self.lastToneTime = nil;
+    self.lastToneWentUp = NO;
+    self.heardLastTone = NO;
+    self.toneHeardHistory = [NSMutableArray arrayWithCapacity:3];
+    [self doToneForTest];
+  } else {
+    [self finishTest];
+  }
 }
 
 - (void)finishFrequency
 {
-  [self finishTest];
+  OTFrequencyResult *fr = (OTFrequencyResult *)[NSEntityDescription insertNewObjectForEntityForName:@"OTFrequencyResult"
+                                                                             inManagedObjectContext:self.managedObjectContext];
+
+  fr.freq = self.frequencies[self.frequencyIndex];
+  fr.dB = @(self.dBVolume);
+  fr.result = self.result;
+  [self.result addFrequencyResultsObject:fr];
+
+  NSError *error = nil;
+  if (![self.managedObjectContext save:&error]) {
+    [NSException raise:@"Managed Object Context Save Failed" format:@"%@", [error localizedDescription]];
+  }
+
+  [self beginNextFrequency];
 }
 
 - (void)finishTest
 {
+  NSLog(@"RESULT %@", self.result.date);
+  for (OTFrequencyResult *fr in self.result.frequencyResults) {
+    NSLog(@"%@: %@", fr.freq, fr.dB);
+  }
+  NSLog(@"");
+
   self.heardItButton.hidden = YES;
+
+  // allow self.result and its related frequency results to be released
+  [self.managedObjectContext refreshObject:self.result mergeChanges:NO];
+  self.result = nil;
 }
 
 #pragma mark -
@@ -129,13 +154,6 @@
   self.frequencyIndex = INITIAL_FREQ_IDX;
   self.heardItButton.hidden = NO;
   [self beginNextFrequency];
-  
-//  self.heardLastTone 
-  // TODO handle error
-//  NSError *error = nil;
-//  if (![self.managedObjectContext save:&error]) {
-//    NSLog(@"Failed to save MOC");
-//  }
 }
 
 - (IBAction)heardTone

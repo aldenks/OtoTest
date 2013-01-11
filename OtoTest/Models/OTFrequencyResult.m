@@ -12,8 +12,8 @@
 
 @implementation OTFrequencyResult
 
-@dynamic freqHz;
-@dynamic vol;
+@dynamic freq;
+@dynamic dB;
 @dynamic result;
 
 @end

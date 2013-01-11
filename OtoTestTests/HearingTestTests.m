@@ -19,14 +19,14 @@
   vc.toneHeardHistory = [NSMutableArray arrayWithArray:@[]];
   STAssertFalse([vc isDoneWithFrequency], @"must not be done with frequency if tone history is empty");
   
-  vc.toneHeardHistory = [NSMutableArray arrayWithArray:@[fals,fals,tru]];
-  STAssertFalse([vc isDoneWithFrequency], @"must not be done with frequency if heard 1/3 times");
-  vc.toneHeardHistory = [NSMutableArray arrayWithArray:@[fals,tru,tru]];
-  STAssertTrue([vc isDoneWithFrequency], @"must be done with frequency if heard 2/3 times");
-  vc.toneHeardHistory = [NSMutableArray arrayWithArray:@[tru,fals,tru]];
-  STAssertTrue([vc isDoneWithFrequency], @"must be done with frequency if heard 2/3 times");
-  vc.toneHeardHistory = [NSMutableArray arrayWithArray:@[tru,tru,tru]];
-  STAssertTrue([vc isDoneWithFrequency], @"must be done with frequency if heard 3/3 times");
+  vc.toneHeardHistory = [NSMutableArray arrayWithArray:@[fals,fals,tru,fals]];
+  STAssertFalse([vc isDoneWithFrequency], @"must not be done with frequency if heard 1/4 times");
+  vc.toneHeardHistory = [NSMutableArray arrayWithArray:@[tru,fals,fals,tru]];
+  STAssertTrue([vc isDoneWithFrequency], @"must be done with frequency if heard 2/4 times");
+  vc.toneHeardHistory = [NSMutableArray arrayWithArray:@[fals,fals,tru,tru]];
+  STAssertTrue([vc isDoneWithFrequency], @"must be done with frequency if heard 2/4 times");
+  vc.toneHeardHistory = [NSMutableArray arrayWithArray:@[tru,tru,tru,tru]];
+  STAssertTrue([vc isDoneWithFrequency], @"must be done with frequency if heard 4/4 times");
 }
 
 @end
