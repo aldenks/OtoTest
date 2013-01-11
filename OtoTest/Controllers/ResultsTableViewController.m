@@ -40,7 +40,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
-  
+
   NSFetchRequest *request = [[NSFetchRequest alloc] init];
   request.entity = [NSEntityDescription entityForName:@"OTResult" inManagedObjectContext:self.managedObjectContext];
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
@@ -62,6 +62,15 @@
   // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Table View Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  ResultDetailTableViewController *resultVC = segue.destinationViewController;
+  NSInteger row = [[self.tableView indexPathForSelectedRow] row];
+  resultVC.result = self.results[row];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -81,16 +90,23 @@
   OTResult *result = [results objectAtIndex:indexPath.row];
   
   static NSDateFormatter *dateFormatter = nil;
+  static NSDateFormatter *timeFormatter = nil;
   if (dateFormatter == nil) {
     dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
   }
-  
+  if (timeFormatter == nil) {
+    timeFormatter = [[NSDateFormatter alloc] init];
+    [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [timeFormatter setDateStyle:NSDateFormatterNoStyle];
+  }
+
   static NSString *CellIdentifier = @"ResultCell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
   cell.textLabel.text = [dateFormatter stringFromDate:result.date];
+  cell.detailTextLabel.text = [timeFormatter stringFromDate:result.date];
   
   return cell;
 }

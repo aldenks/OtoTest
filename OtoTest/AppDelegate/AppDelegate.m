@@ -18,13 +18,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-  
+
   UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
   for (id vc in [tabBarController viewControllers]) {
     if ([vc respondsToSelector:@selector(setManagedObjectContext:)])
       [vc setManagedObjectContext:self.managedObjectContext];
   }
-  // Override point for customization after application launch.
   return YES;
 }
 

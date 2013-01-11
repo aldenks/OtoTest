@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ResultDetailTableViewController.h"
 
 @interface ResultsTableViewController : UITableViewController
 
