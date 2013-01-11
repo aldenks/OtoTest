@@ -90,70 +90,14 @@
                             <constraint firstAttribute="centerY" secondItem="21" secondAttribute="centerY" type="user" id="yWk-L2-m9F"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Test" image="first" id="7"/>
                     <connections>
                         <outlet property="heardItButton" destination="kr1-wo-rMh" id="ZmJ-PB-DNn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="-138"/>
-        </scene>
-        <!--Second View Controller - Second-->
-        <scene sceneID="13">
-            <objects>
-                <viewController title="Second" id="3" customClass="SecondViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="22">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the second view controller — an instance of SecondViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="cQR-IW-sY8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AN6-4w-bOB">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="101" id="QcL-tR-2aE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Mail">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="presentMailer:" destination="3" eventType="touchUpInside" id="eOR-za-O9u"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="22" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0q6-IA-e8m"/>
-                            <constraint firstAttribute="bottom" secondItem="AN6-4w-bOB" secondAttribute="bottom" constant="134" id="J7J-VO-f5G"/>
-                            <constraint firstItem="AN6-4w-bOB" firstAttribute="centerX" secondItem="23" secondAttribute="centerX" type="default" id="TA8-Yc-iXY"/>
-                            <constraint firstAttribute="trailing" secondItem="23" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fR4-wH-Ih7"/>
-                            <constraint firstItem="23" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fzb-YA-SeR"/>
-                            <constraint firstAttribute="centerY" secondItem="23" secondAttribute="centerY" type="user" id="llH-eD-iPS"/>
-                            <constraint firstAttribute="trailing" secondItem="22" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pc3-9Y-W42"/>
-                            <constraint firstItem="23" firstAttribute="top" secondItem="22" secondAttribute="bottom" constant="40" type="user" id="yUx-Ee-KEk"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="653" y="498"/>
+            <point key="canvasLocation" x="603" y="114"/>
         </scene>
         <!--Results Table View Controller - Results-->
         <scene sceneID="5wZ-le-JK0">
@@ -194,7 +138,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L0E-TM-gdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="1115"/>
+            <point key="canvasLocation" x="1067" y="782"/>
         </scene>
         <!--Result Detail Table View Controller-->
         <scene sceneID="35h-Ea-6MQ">
@@ -206,7 +150,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FrequencyResultCell" textLabel="lh0-2F-Sbh" detailTextLabel="MsM-E3-aWF" style="IBUITableViewCellStyleValue1" id="Dsf-zy-4wd">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -226,6 +170,37 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="EmailButtonCell" id="Vwm-5i-0qZ">
+                                <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-B3-qao">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="300" id="Ci2-nW-JAl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <state key="normal" title="Email This Result">
+                                                <color key="titleColor" red="0.36608233869567841" green="0.59548389668367352" blue="0.21437074249443544" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="presentMailer" destination="9bJ-pA-sy4" eventType="touchUpInside" id="gqO-rh-3Sg"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Ydd-B3-qao" firstAttribute="top" secondItem="Vwm-5i-0qZ" secondAttribute="top" type="default" id="XLA-yx-ezm"/>
+                                    <constraint firstItem="Ydd-B3-qao" firstAttribute="centerX" secondItem="Vwm-5i-0qZ" secondAttribute="centerX" type="default" id="evS-Oo-flL"/>
+                                    <constraint firstItem="Ydd-B3-qao" firstAttribute="centerY" secondItem="Vwm-5i-0qZ" secondAttribute="centerY" type="default" id="quE-rd-fY8"/>
+                                </constraints>
+                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -237,13 +212,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpS-kN-i6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1531" y="1115"/>
+            <point key="canvasLocation" x="1517" y="782"/>
         </scene>
-        <!--Results Navigation Controller - Item-->
+        <!--Results Navigation Controller - Results-->
         <scene sceneID="594-T1-Ut6">
             <objects>
                 <navigationController definesPresentationContext="YES" id="665-fi-nkL" customClass="ResultsNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="0NU-aH-BUX"/>
+                    <tabBarItem key="tabBarItem" title="Results" image="second" id="0NU-aH-BUX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uMu-lW-2ua">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -253,7 +228,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRA-Me-jJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="1115"/>
+            <point key="canvasLocation" x="603" y="782"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -267,7 +242,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
-                        <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="665-fi-nkL" kind="relationship" relationship="viewControllers" id="J47-N8-1q5"/>
                     </connections>
                 </tabBarController>
@@ -286,6 +260,7 @@
             <relationships>
                 <relationship kind="action" name="beginTest"/>
                 <relationship kind="action" name="heardTone"/>
+                <relationship kind="action" name="soundButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="heardItButton" candidateClass="UIButton"/>
             </relationships>
         </class>
@@ -297,18 +272,15 @@
         </class>
         <class className="ResultDetailTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultDetailTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="presentMailer"/>
+            </relationships>
         </class>
         <class className="ResultsNavigationController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsNavigationController.h"/>
         </class>
         <class className="ResultsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsTableViewController.h"/>
-        </class>
-        <class className="SecondViewController" superclassName="OTViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="presentMailer:"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

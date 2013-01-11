@@ -21,7 +21,6 @@
 		BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC027AC168E899500CE3F80 /* InfoPlist.strings */; };
 		BFC027CB168E899500CE3F80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B2168E899500CE3F80 /* AppDelegate.m */; };
 		BFC027CC168E899500CE3F80 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B5168E899500CE3F80 /* FirstViewController.m */; };
-		BFC027CD168E899500CE3F80 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B7168E899500CE3F80 /* SecondViewController.m */; };
 		BFC027CF168E899500CE3F80 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027BC168E899500CE3F80 /* first.png */; };
 		BFC027D0168E899500CE3F80 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027BD168E899500CE3F80 /* first@2x.png */; };
 		BFC027D1168E899500CE3F80 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027BE168E899500CE3F80 /* second.png */; };
@@ -83,8 +82,6 @@
 		BFC027B2168E899500CE3F80 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BFC027B4168E899500CE3F80 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		BFC027B5168E899500CE3F80 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		BFC027B6168E899500CE3F80 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		BFC027B7168E899500CE3F80 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		BFC027BC168E899500CE3F80 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		BFC027BD168E899500CE3F80 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		BFC027BE168E899500CE3F80 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
@@ -231,8 +228,6 @@
 			children = (
 				BFC027B4168E899500CE3F80 /* FirstViewController.h */,
 				BFC027B5168E899500CE3F80 /* FirstViewController.m */,
-				BFC027B6168E899500CE3F80 /* SecondViewController.h */,
-				BFC027B7168E899500CE3F80 /* SecondViewController.m */,
 				BF7373BE169FF5E200398A09 /* ResultsNavigationController.h */,
 				BF7373BF169FF5E200398A09 /* ResultsNavigationController.m */,
 				BFC028411691888F00CE3F80 /* ResultsTableViewController.h */,
@@ -448,7 +443,6 @@
 			files = (
 				BFC027CB168E899500CE3F80 /* AppDelegate.m in Sources */,
 				BFC027CC168E899500CE3F80 /* FirstViewController.m in Sources */,
-				BFC027CD168E899500CE3F80 /* SecondViewController.m in Sources */,
 				BFC027D5168E899500CE3F80 /* main.m in Sources */,
 				BFC027FD16905A0600CE3F80 /* OTFrequencyResult.m in Sources */,
 				BFC0283F16917C5700CE3F80 /* OTViewController.m in Sources */,

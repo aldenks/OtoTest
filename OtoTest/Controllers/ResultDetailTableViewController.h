@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface ResultDetailTableViewController : UITableViewController
+@interface ResultDetailTableViewController : UITableViewController <MFMailComposeViewControllerDelegate>
+
+- (IBAction)presentMailer;
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error;
 
 @property OTResult *result;
 @property NSArray *freqResults;
