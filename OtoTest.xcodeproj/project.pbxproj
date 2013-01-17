@@ -14,24 +14,17 @@
 		BF1615D71685294500C9CB0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A41685294400C9CB0E /* Foundation.framework */; };
 		BF3867D81696CEE600D46E58 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3867D71696CEE600D46E58 /* MessageUI.framework */; };
 		BF7373BC169FE3A900398A09 /* ResultDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7373BB169FE3A900398A09 /* ResultDetailTableViewController.m */; };
-		BF7373C0169FF5E200398A09 /* ResultsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7373BF169FF5E200398A09 /* ResultsNavigationController.m */; };
+		BF7373C0169FF5E200398A09 /* OTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7373BF169FF5E200398A09 /* OTNavigationController.m */; };
 		BFAABC03169EB45E002C3316 /* HearingTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAABC02169EB45E002C3316 /* HearingTestTests.m */; };
 		BFAABC06169F4CE2002C3316 /* OtoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFAABC04169F4CE2002C3316 /* OtoTest.xcdatamodeld */; };
 		BFC0276E168E299C00CE3F80 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC0276C168E297600CE3F80 /* SenTestingKit.framework */; };
 		BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC027AC168E899500CE3F80 /* InfoPlist.strings */; };
 		BFC027CB168E899500CE3F80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B2168E899500CE3F80 /* AppDelegate.m */; };
 		BFC027CC168E899500CE3F80 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B5168E899500CE3F80 /* TestViewController.m */; };
-		BFC027CF168E899500CE3F80 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027BC168E899500CE3F80 /* first.png */; };
-		BFC027D0168E899500CE3F80 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027BD168E899500CE3F80 /* first@2x.png */; };
-		BFC027D1168E899500CE3F80 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027BE168E899500CE3F80 /* second.png */; };
-		BFC027D2168E899500CE3F80 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027BF168E899500CE3F80 /* second@2x.png */; };
 		BFC027D3168E899500CE3F80 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC027C2168E899500CE3F80 /* MainStoryboard_iPad.storyboard */; };
 		BFC027D4168E899500CE3F80 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC027C3168E899500CE3F80 /* MainStoryboard_iPhone.storyboard */; };
 		BFC027D5168E899500CE3F80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027C5168E899500CE3F80 /* main.m */; };
 		BFC027D7168E8A1000CE3F80 /* OtoTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027AA168E899500CE3F80 /* OtoTestTests.m */; };
-		BFC027DD168E8B8100CE3F80 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027DA168E8B8100CE3F80 /* Default-568h@2x.png */; };
-		BFC027DE168E8B8100CE3F80 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027DB168E8B8100CE3F80 /* Default.png */; };
-		BFC027DF168E8B8100CE3F80 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC027DC168E8B8100CE3F80 /* Default@2x.png */; };
 		BFC027E8168F603400CE3F80 /* 10000Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E1168F603400CE3F80 /* 10000Hz.mp3 */; };
 		BFC027E9168F603400CE3F80 /* 11200Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E2168F603400CE3F80 /* 11200Hz.mp3 */; };
 		BFC027EA168F603400CE3F80 /* 12500Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E3168F603400CE3F80 /* 12500Hz.mp3 */; };
@@ -47,6 +40,15 @@
 		BFC0284916945ABF00CE3F80 /* NSArray-Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0284816945ABF00CE3F80 /* NSArray-Blocks.m */; };
 		BFC0284D1694D29F00CE3F80 /* OTShared.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0284C1694D29F00CE3F80 /* OTShared.m */; };
 		BFC0284F169525B000CE3F80 /* OTResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0284E169525AF00CE3F80 /* OTResult.m */; };
+		BFC35EAD16A0FE9800E9467A /* AppIconiPad.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EA916A0FE9800E9467A /* AppIconiPad.png */; };
+		BFC35EAE16A0FE9800E9467A /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EAA16A0FE9800E9467A /* AppIcon@2x.png */; };
+		BFC35EAF16A0FE9800E9467A /* AppIconiPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EAB16A0FE9800E9467A /* AppIconiPad@2x.png */; };
+		BFC35EB116A0FF0400E9467A /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EB016A0FF0300E9467A /* AppIcon.png */; };
+		BFC35EB916A1064D00E9467A /* ResultsTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EB716A1064D00E9467A /* ResultsTabBarIcon.png */; };
+		BFC35EBA16A1064D00E9467A /* ResultsTabBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EB816A1064D00E9467A /* ResultsTabBarIcon@2x.png */; };
+		BFC35EBD16A10B2900E9467A /* TestTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EBB16A10B2900E9467A /* TestTabBarIcon.png */; };
+		BFC35EBE16A10B2900E9467A /* TestTabBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EBC16A10B2900E9467A /* TestTabBarIcon@2x.png */; };
+		BFC35EC016A10E9E00E9467A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EBF16A10E9E00E9467A /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +70,8 @@
 		BF3867D71696CEE600D46E58 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		BF7373BA169FE3A800398A09 /* ResultDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultDetailTableViewController.h; sourceTree = "<group>"; };
 		BF7373BB169FE3A900398A09 /* ResultDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultDetailTableViewController.m; sourceTree = "<group>"; };
-		BF7373BE169FF5E200398A09 /* ResultsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsNavigationController.h; sourceTree = "<group>"; };
-		BF7373BF169FF5E200398A09 /* ResultsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsNavigationController.m; sourceTree = "<group>"; };
+		BF7373BE169FF5E200398A09 /* OTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTNavigationController.h; sourceTree = "<group>"; };
+		BF7373BF169FF5E200398A09 /* OTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTNavigationController.m; sourceTree = "<group>"; };
 		BFAABC01169EB45E002C3316 /* HearingTestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HearingTestTests.h; sourceTree = "<group>"; };
 		BFAABC02169EB45E002C3316 /* HearingTestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HearingTestTests.m; sourceTree = "<group>"; };
 		BFAABC05169F4CE2002C3316 /* OtoTest0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OtoTest0.xcdatamodel; sourceTree = "<group>"; };
@@ -82,18 +84,11 @@
 		BFC027B2168E899500CE3F80 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BFC027B4168E899500CE3F80 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		BFC027B5168E899500CE3F80 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		BFC027BC168E899500CE3F80 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		BFC027BD168E899500CE3F80 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		BFC027BE168E899500CE3F80 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		BFC027BF168E899500CE3F80 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		BFC027C2168E899500CE3F80 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		BFC027C3168E899500CE3F80 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		BFC027C5168E899500CE3F80 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BFC027C6168E899500CE3F80 /* OtoTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OtoTest-Info.plist"; sourceTree = "<group>"; };
 		BFC027C7168E899500CE3F80 /* OtoTest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OtoTest-Prefix.pch"; sourceTree = "<group>"; };
-		BFC027DA168E8B8100CE3F80 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		BFC027DB168E8B8100CE3F80 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		BFC027DC168E8B8100CE3F80 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BFC027E1168F603400CE3F80 /* 10000Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 10000Hz.mp3; sourceTree = "<group>"; };
 		BFC027E2168F603400CE3F80 /* 11200Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11200Hz.mp3; sourceTree = "<group>"; };
 		BFC027E3168F603400CE3F80 /* 12500Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12500Hz.mp3; sourceTree = "<group>"; };
@@ -116,6 +111,15 @@
 		BFC0284B1694D29F00CE3F80 /* OTShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTShared.h; sourceTree = "<group>"; };
 		BFC0284C1694D29F00CE3F80 /* OTShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTShared.m; sourceTree = "<group>"; };
 		BFC0284E169525AF00CE3F80 /* OTResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTResult.m; sourceTree = "<group>"; };
+		BFC35EA916A0FE9800E9467A /* AppIconiPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconiPad.png; sourceTree = SOURCE_ROOT; };
+		BFC35EAA16A0FE9800E9467A /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@2x.png"; sourceTree = SOURCE_ROOT; };
+		BFC35EAB16A0FE9800E9467A /* AppIconiPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIconiPad@2x.png"; sourceTree = SOURCE_ROOT; };
+		BFC35EB016A0FF0300E9467A /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = ../../AppIcon.png; sourceTree = "<group>"; };
+		BFC35EB716A1064D00E9467A /* ResultsTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ResultsTabBarIcon.png; sourceTree = "<group>"; };
+		BFC35EB816A1064D00E9467A /* ResultsTabBarIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ResultsTabBarIcon@2x.png"; sourceTree = "<group>"; };
+		BFC35EBB16A10B2900E9467A /* TestTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestTabBarIcon.png; sourceTree = "<group>"; };
+		BFC35EBC16A10B2900E9467A /* TestTabBarIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TestTabBarIcon@2x.png"; sourceTree = "<group>"; };
+		BFC35EBF16A10E9E00E9467A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,8 +232,8 @@
 			children = (
 				BFC027B4168E899500CE3F80 /* TestViewController.h */,
 				BFC027B5168E899500CE3F80 /* TestViewController.m */,
-				BF7373BE169FF5E200398A09 /* ResultsNavigationController.h */,
-				BF7373BF169FF5E200398A09 /* ResultsNavigationController.m */,
+				BF7373BE169FF5E200398A09 /* OTNavigationController.h */,
+				BF7373BF169FF5E200398A09 /* OTNavigationController.m */,
 				BFC028411691888F00CE3F80 /* ResultsTableViewController.h */,
 				BFC028421691888F00CE3F80 /* ResultsTableViewController.m */,
 				BF7373BA169FE3A800398A09 /* ResultDetailTableViewController.h */,
@@ -243,9 +247,8 @@
 		BFC027BA168E899500CE3F80 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				BFC027DA168E8B8100CE3F80 /* Default-568h@2x.png */,
-				BFC027DB168E8B8100CE3F80 /* Default.png */,
-				BFC027DC168E8B8100CE3F80 /* Default@2x.png */,
+				BFC35EC116A10ECD00E9467A /* LaunchImages */,
+				BFC35EB216A0FF1800E9467A /* AppIcons */,
 				BFC027BB168E899500CE3F80 /* TabBarItems */,
 			);
 			path = Images;
@@ -254,10 +257,10 @@
 		BFC027BB168E899500CE3F80 /* TabBarItems */ = {
 			isa = PBXGroup;
 			children = (
-				BFC027BC168E899500CE3F80 /* first.png */,
-				BFC027BD168E899500CE3F80 /* first@2x.png */,
-				BFC027BE168E899500CE3F80 /* second.png */,
-				BFC027BF168E899500CE3F80 /* second@2x.png */,
+				BFC35EBB16A10B2900E9467A /* TestTabBarIcon.png */,
+				BFC35EBC16A10B2900E9467A /* TestTabBarIcon@2x.png */,
+				BFC35EB716A1064D00E9467A /* ResultsTabBarIcon.png */,
+				BFC35EB816A1064D00E9467A /* ResultsTabBarIcon@2x.png */,
 			);
 			path = TabBarItems;
 			sourceTree = "<group>";
@@ -317,6 +320,25 @@
 				BFC0284C1694D29F00CE3F80 /* OTShared.m */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BFC35EB216A0FF1800E9467A /* AppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				BFC35EB016A0FF0300E9467A /* AppIcon.png */,
+				BFC35EAA16A0FE9800E9467A /* AppIcon@2x.png */,
+				BFC35EA916A0FE9800E9467A /* AppIconiPad.png */,
+				BFC35EAB16A0FE9800E9467A /* AppIconiPad@2x.png */,
+			);
+			name = AppIcons;
+			sourceTree = "<group>";
+		};
+		BFC35EC116A10ECD00E9467A /* LaunchImages */ = {
+			isa = PBXGroup;
+			children = (
+				BFC35EBF16A10E9E00E9467A /* Default-568h@2x.png */,
+			);
+			name = LaunchImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,15 +414,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */,
-				BFC027CF168E899500CE3F80 /* first.png in Resources */,
-				BFC027D0168E899500CE3F80 /* first@2x.png in Resources */,
-				BFC027D1168E899500CE3F80 /* second.png in Resources */,
-				BFC027D2168E899500CE3F80 /* second@2x.png in Resources */,
 				BFC027D3168E899500CE3F80 /* MainStoryboard_iPad.storyboard in Resources */,
 				BFC027D4168E899500CE3F80 /* MainStoryboard_iPhone.storyboard in Resources */,
-				BFC027DD168E8B8100CE3F80 /* Default-568h@2x.png in Resources */,
-				BFC027DE168E8B8100CE3F80 /* Default.png in Resources */,
-				BFC027DF168E8B8100CE3F80 /* Default@2x.png in Resources */,
 				BFC027E8168F603400CE3F80 /* 10000Hz.mp3 in Resources */,
 				BFC027E9168F603400CE3F80 /* 11200Hz.mp3 in Resources */,
 				BFC027EA168F603400CE3F80 /* 12500Hz.mp3 in Resources */,
@@ -408,6 +423,15 @@
 				BFC027EC168F603400CE3F80 /* 16000Hz.mp3 in Resources */,
 				BFC027ED168F603400CE3F80 /* 8000Hz.mp3 in Resources */,
 				BFC027EE168F603400CE3F80 /* 9000Hz.mp3 in Resources */,
+				BFC35EAD16A0FE9800E9467A /* AppIconiPad.png in Resources */,
+				BFC35EAE16A0FE9800E9467A /* AppIcon@2x.png in Resources */,
+				BFC35EAF16A0FE9800E9467A /* AppIconiPad@2x.png in Resources */,
+				BFC35EB116A0FF0400E9467A /* AppIcon.png in Resources */,
+				BFC35EB916A1064D00E9467A /* ResultsTabBarIcon.png in Resources */,
+				BFC35EBA16A1064D00E9467A /* ResultsTabBarIcon@2x.png in Resources */,
+				BFC35EBD16A10B2900E9467A /* TestTabBarIcon.png in Resources */,
+				BFC35EBE16A10B2900E9467A /* TestTabBarIcon@2x.png in Resources */,
+				BFC35EC016A10E9E00E9467A /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +476,7 @@
 				BFC0284F169525B000CE3F80 /* OTResult.m in Sources */,
 				BFAABC06169F4CE2002C3316 /* OtoTest.xcdatamodeld in Sources */,
 				BF7373BC169FE3A900398A09 /* ResultDetailTableViewController.m in Sources */,
-				BF7373C0169FF5E200398A09 /* ResultsNavigationController.m in Sources */,
+				BF7373C0169FF5E200398A09 /* OTNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 alden. All rights reserved.
 //
 
-#import "ResultsNavigationController.h"
+#import "OTNavigationController.h"
 
-@interface ResultsNavigationController ()
+@interface OTNavigationController ()
 
 @end
 
-@implementation ResultsNavigationController
+@implementation OTNavigationController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

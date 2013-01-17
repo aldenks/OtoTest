@@ -15,7 +15,9 @@ static NSArray *_toneFiles;
 + (NSArray *)toneFiles
 {
   if (!_toneFiles)
-    _toneFiles = @[@"8000Hz", @"9000Hz", @"10000Hz", @"11200Hz", @"12500Hz", @"14000Hz", @"16000Hz"];
+    // TODO revert
+    //_toneFiles = @[@"8000Hz", @"9000Hz", @"10000Hz", @"11200Hz", @"12500Hz", @"14000Hz", @"16000Hz"];
+    _toneFiles = @[@"8000Hz", @"9000Hz"];
   return _toneFiles;
 }
 

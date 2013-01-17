@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResultsNavigationController : UINavigationController
+@interface OTNavigationController : UINavigationController
 
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 
