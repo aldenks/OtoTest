@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Test View Controller - First-->
@@ -37,6 +37,9 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr1-wo-rMh">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="298" id="OgN-zE-qds"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                 <state key="normal" title="Heard It">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,19 +52,37 @@
                                     <action selector="heardTone" destination="2" eventType="touchUpInside" id="lDd-xj-fWM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="640-OD-V34">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="7bN-v5-rz2"/>
+                                    <constraint firstAttribute="height" constant="36" id="IcA-6S-Q6G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelTest" destination="2" eventType="touchUpInside" id="shS-P2-bUJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="640-OD-V34" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2n7-RW-dvY"/>
                             <constraint firstAttribute="trailing" secondItem="kr1-wo-rMh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7is-5h-7ar"/>
                             <constraint firstAttribute="centerX" secondItem="6Im-ST-H7d" secondAttribute="centerX" type="user" id="88r-SO-xhZ"/>
                             <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Bb3-2O-IK3"/>
                             <constraint firstItem="6Im-ST-H7d" firstAttribute="top" secondItem="16" secondAttribute="top" priority="1" constant="147" type="user" id="J4U-1d-C2N"/>
                             <constraint firstItem="kr1-wo-rMh" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PkY-Xv-6WA"/>
-                            <constraint firstItem="kr1-wo-rMh" firstAttribute="top" secondItem="16" secondAttribute="top" constant="20" symbolic="YES" type="default" id="S0s-3m-Bep"/>
                             <constraint firstItem="21" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="WpM-8b-xNE"/>
                             <constraint firstItem="6Im-ST-H7d" firstAttribute="top" relation="greaterThanOrEqual" secondItem="16" secondAttribute="top" constant="62" type="user" id="YO9-kJ-ou6"/>
                             <constraint firstAttribute="centerY" secondItem="6Im-ST-H7d" secondAttribute="centerY" type="user" id="nnr-RR-roe"/>
                             <constraint firstAttribute="bottom" secondItem="kr1-wo-rMh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ocb-oo-62B"/>
+                            <constraint firstItem="640-OD-V34" firstAttribute="top" secondItem="16" secondAttribute="top" constant="7" id="pEs-85-3pU"/>
                             <constraint firstItem="21" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="tHX-Dh-UNM"/>
                         </constraints>
                     </view>
@@ -70,6 +91,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="cancelButton" destination="640-OD-V34" id="vcU-Dg-yRx"/>
                         <outlet property="heardItButton" destination="kr1-wo-rMh" id="ZmJ-PB-DNn"/>
                     </connections>
                 </viewController>
@@ -254,34 +276,6 @@
         <image name="ResultsTabBarIcon" width="16" height="16"/>
         <image name="TestTabBarIcon" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="OTNavigationController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OTNavigationController.h"/>
-        </class>
-        <class className="OTViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OTViewController.h"/>
-        </class>
-        <class className="ResultDetailTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultDetailTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="presentMailer"/>
-            </relationships>
-        </class>
-        <class className="ResultsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsTableViewController.h"/>
-        </class>
-        <class className="TestViewController" superclassName="OTViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="beginTest"/>
-                <relationship kind="action" name="heardTone"/>
-                <relationship kind="outlet" name="heardItButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

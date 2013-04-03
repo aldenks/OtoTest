@@ -20,13 +20,16 @@
 
 - (void)viewDidLoad
 {
+  // Do any additional setup after loading the view, typically from a nib.
   [super viewDidLoad];
   self.frequencies = [OTShared toneFiles];
-	// Do any additional setup after loading the view, typically from a nib.
+  // AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+  // [appDelegate setTestViewController:self];
 }
 
 - (void)viewDidUnload {
   [self setHeardItButton:nil];
+  [self setCancelButton:nil];
   [super viewDidUnload];
 }
 
@@ -72,9 +75,10 @@
     NSLog(@"didn't hear it, increasing vol by %f", dBIncrease);
   }
   
-  if ([self volumeFromDecibles:self.dBVolume] > 1.0) {
-    //TODO fail test
-    [NSException raise:@"Implement Me" format:@"volume above max"];
+  if ([self volumeFromDecibles:self.dBVolume] > 1.0 ||
+      [self volumeFromDecibles:self.dBVolume] <=  0 ) {
+    [self cancelTest];
+    return;
   }
   
   [self playCurrentTone];
@@ -136,6 +140,7 @@
   NSLog(@"");
 
   self.heardItButton.hidden = YES;
+  self.cancelButton.hidden = YES;
 
   // TODO clean up other vars
 
@@ -155,8 +160,23 @@
   self.result = result;
   self.frequencyIndex = INITIAL_FREQ_IDX;
   self.heardItButton.hidden = NO;
+  self.cancelButton.hidden = NO;
   // return control to UI before starting test so its responsive
   [self performSelector:@selector(beginNextFrequency) withObject:nil afterDelay:0];
+}
+
+- (IBAction)cancelTest
+{
+  if (!self.result) return;
+  [NSObject cancelPreviousPerformRequestsWithTarget:self];
+  [self.managedObjectContext deleteObject:self.result];
+  NSError *error = nil;
+  if (![self.managedObjectContext save:&error]) {
+    [NSException raise:@"Managed Object Context Save Failed" format:@"%@", [error localizedDescription]];
+  }
+  self.heardItButton.hidden = YES;
+  self.cancelButton.hidden = YES;
+  self.result = nil;
 }
 
 - (IBAction)heardTone
@@ -183,6 +203,14 @@
   [self.player play];
 }
 
+- (void)applicationWillResignActive:(NSNotification *)notification
+{
+  [self cancelTest];
+}
+
+
+
+#pragma mark - Utils
 - (double)volumeFromDecibles:(double)decibles
 {
   // TODO find actual ratio

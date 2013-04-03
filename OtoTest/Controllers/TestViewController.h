@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVAudioPlayer.h>
 #import "OTViewController.h"
+#import "AppDelegate.h"
 
 #define INTER_TONE_TIME        5.0   // in seconds
 #define RECOGNITION_WINDOW     4.0   // in seconds
@@ -30,6 +31,7 @@ typedef enum {
 @interface TestViewController : OTViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *heardItButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @property AVAudioPlayer *player;
 @property NSArray *frequencies;
@@ -49,7 +51,11 @@ typedef enum {
 - (void)doToneForTest;
 - (void)finishFrequency;
 - (void)finishTest;
+- (IBAction)cancelTest;
 - (BOOL)isDoneWithFrequency;
+
+- (void)applicationWillResignActive:(NSNotification *)notification;
+
 - (double)volumeFromDecibles:(double)decibles;
 
 @end

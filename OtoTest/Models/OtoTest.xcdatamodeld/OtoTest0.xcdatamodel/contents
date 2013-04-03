@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="OTFrequencyResult" representedClassName="OTFrequencyResult" syncable="YES">
+    <entity name="OTFrequencyResult" representedClassName="OTFrequencyResult" parentEntity="OTResult" syncable="YES">
         <attribute name="dB" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="freq" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="result" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OTResult" inverseName="frequencyResults" inverseEntity="OTResult" syncable="YES"/>
+        <relationship name="result" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="OTResult" inverseName="frequencyResults" inverseEntity="OTResult" syncable="YES"/>
     </entity>
     <entity name="OTResult" representedClassName="OTResult" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
