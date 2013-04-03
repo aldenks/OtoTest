@@ -167,16 +167,18 @@
 
 - (IBAction)cancelTest
 {
-  if (!self.result) return;
   [NSObject cancelPreviousPerformRequestsWithTarget:self];
-  [self.managedObjectContext deleteObject:self.result];
-  NSError *error = nil;
-  if (![self.managedObjectContext save:&error]) {
-    [NSException raise:@"Managed Object Context Save Failed" format:@"%@", [error localizedDescription]];
-  }
   self.heardItButton.hidden = YES;
   self.cancelButton.hidden = YES;
-  self.result = nil;
+
+  if (self.result) {
+    [self.managedObjectContext deleteObject:self.result];
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+      [NSException raise:@"Managed Object Context Save Failed" format:@"%@", [error localizedDescription]];
+    }
+    self.result = nil;
+  }
 }
 
 - (IBAction)heardTone
