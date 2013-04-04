@@ -45,11 +45,17 @@
 // Main test function. called once every INTER_TONE_TIME seconds
 - (void)doToneForTest
 {
-  if (self.testPhase == OTTestPhaseSecond && self.lastToneWentUp) {
-    // maintain a history of the 3 most recent "heard it?" results for acending tones
-    if (self.toneHeardHistory.count > 3)
-      [self.toneHeardHistory removeObjectAtIndex:0];
-    [self.toneHeardHistory addObject:[NSNumber numberWithBool:self.heardLastTone]];
+  if (self.testPhase == OTTestPhaseSecond) {
+    // maintain a history of the 4 most recent "heard it?" results for each dB value
+    NSString *dBString = [NSString stringWithFormat:@"%.1f", self.dBVolume];
+    NSMutableArray *toneHeardHistoryForDB = self.toneHeardHistory[dBString];
+    if (!toneHeardHistoryForDB) {
+      toneHeardHistoryForDB = [NSMutableArray arrayWithCapacity:4];
+      self.toneHeardHistory[dBString] = toneHeardHistoryForDB;
+    }
+    if (toneHeardHistoryForDB.count > 4)
+      [toneHeardHistoryForDB removeObjectAtIndex:0];
+    [toneHeardHistoryForDB addObject:[NSNumber numberWithBool:self.heardLastTone]];
     NSLog(@"heard history:%@", self.toneHeardHistory);
   }
   
@@ -89,9 +95,11 @@
 
 - (BOOL)isDoneWithFrequency
 {
-  if (self.testPhase != OTTestPhaseSecond)
+  NSString *dBString = [NSString stringWithFormat:@"%.1f", self.dBVolume];
+  NSArray *toneHeardHistoryForDB = self.toneHeardHistory[dBString];
+  if (self.testPhase != OTTestPhaseSecond || !toneHeardHistoryForDB)
     return NO;
-  NSArray *ayes = [self.toneHeardHistory select:^(id heard, NSUInteger idx) {
+  NSArray *ayes = [toneHeardHistoryForDB select:^(id heard, NSUInteger idx) {
     return [heard boolValue];
   }];
   return [ayes count] >= 2;
@@ -106,7 +114,7 @@
     self.lastToneTime = nil;
     self.lastToneWentUp = NO;
     self.heardLastTone = NO;
-    self.toneHeardHistory = [NSMutableArray arrayWithCapacity:3];
+    self.toneHeardHistory = [NSMutableDictionary dictionaryWithCapacity:10];
     [self doToneForTest];
   } else {
     [self finishTest];

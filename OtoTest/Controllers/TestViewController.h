@@ -43,7 +43,7 @@ typedef enum {
 @property NSDate *lastToneTime;      // time at which the most recent tone was played
 @property BOOL lastToneWentUp;       // was the volume increased for the last tone?
 @property BOOL heardLastTone;        // has user heard most recent tone?
-@property NSMutableArray *toneHeardHistory; // heard tone? BOOL array for last 0-3 tones
+@property NSMutableDictionary *toneHeardHistory; // heard tone? key: string of dB, value: BOOL array for last 0-4 tones
 
 - (IBAction)beginTest;
 - (IBAction)heardTone;
