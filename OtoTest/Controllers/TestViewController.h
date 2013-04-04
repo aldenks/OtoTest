@@ -51,7 +51,8 @@ typedef enum {
 - (void)doToneForTest;
 - (void)finishFrequency;
 - (void)finishTest;
-- (IBAction)cancelTest;
+- (IBAction)cancelTestButtonPressed;
+- (void)cancelTest;
 - (BOOL)isDoneWithFrequency;
 
 - (void)applicationWillResignActive:(NSNotification *)notification;

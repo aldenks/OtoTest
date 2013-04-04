@@ -4,21 +4,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Test View Controller - First-->
-        <scene sceneID="11">
+        <!--Test Start View Controller - Hearing Test-->
+        <scene sceneID="Ai4-ZR-WN5">
             <objects>
-                <viewController title="First" id="2" customClass="TestViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="16">
+                <viewController id="W5N-ad-MFM" customClass="TestStartViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="em7-IT-da4">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Made with love by Alden Keefe Sampson with the help of Leah Martin" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="21">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="wO6-Ul-hre"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="10"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Im-ST-H7d">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="cLO-pI-wgx"/>
@@ -34,11 +27,43 @@
                                 </state>
                                 <connections>
                                     <action selector="beginTest" destination="2" eventType="touchUpInside" id="mPt-Ki-ILJ"/>
+                                    <segue destination="2" kind="push" id="bV3-lM-eNg"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr1-wo-rMh">
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Made with love by Alden Keefe Sampson with the help of Leah Martin" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="298" id="OgN-zE-qds"/>
+                                    <constraint firstAttribute="height" constant="29" id="wO6-Ul-hre"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="21" firstAttribute="leading" secondItem="em7-IT-da4" secondAttribute="leading" type="default" id="5zK-yA-PDm"/>
+                            <constraint firstItem="21" firstAttribute="centerX" secondItem="6Im-ST-H7d" secondAttribute="centerX" type="default" id="7td-mn-Fix"/>
+                            <constraint firstItem="21" firstAttribute="trailing" secondItem="em7-IT-da4" secondAttribute="trailing" type="default" id="URY-by-qfs"/>
+                            <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ch8-4O-QHj"/>
+                            <constraint firstItem="6Im-ST-H7d" firstAttribute="top" secondItem="em7-IT-da4" secondAttribute="top" constant="147" id="xMV-N6-N6I"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hearing Test" id="S8P-Lt-NzI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ubf-7a-J3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1067" y="94"/>
+        </scene>
+        <!--Test View Controller - First-->
+        <scene sceneID="11">
+            <objects>
+                <viewController title="First" modalTransitionStyle="partialCurl" id="2" customClass="TestViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="16">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr1-wo-rMh">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="332" id="OMS-xA-U5X"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                 <state key="normal" title="Heard It">
@@ -52,52 +77,31 @@
                                     <action selector="heardTone" destination="2" eventType="touchUpInside" id="lDd-xj-fWM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="640-OD-V34">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="7bN-v5-rz2"/>
-                                    <constraint firstAttribute="height" constant="36" id="IcA-6S-Q6G"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelTest" destination="2" eventType="touchUpInside" id="shS-P2-bUJ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="640-OD-V34" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2n7-RW-dvY"/>
-                            <constraint firstAttribute="trailing" secondItem="kr1-wo-rMh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7is-5h-7ar"/>
-                            <constraint firstAttribute="centerX" secondItem="6Im-ST-H7d" secondAttribute="centerX" type="user" id="88r-SO-xhZ"/>
-                            <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Bb3-2O-IK3"/>
-                            <constraint firstItem="6Im-ST-H7d" firstAttribute="top" secondItem="16" secondAttribute="top" priority="1" constant="147" type="user" id="J4U-1d-C2N"/>
-                            <constraint firstItem="kr1-wo-rMh" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PkY-Xv-6WA"/>
-                            <constraint firstItem="21" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="WpM-8b-xNE"/>
-                            <constraint firstItem="6Im-ST-H7d" firstAttribute="top" relation="greaterThanOrEqual" secondItem="16" secondAttribute="top" constant="62" type="user" id="YO9-kJ-ou6"/>
-                            <constraint firstAttribute="centerY" secondItem="6Im-ST-H7d" secondAttribute="centerY" type="user" id="nnr-RR-roe"/>
-                            <constraint firstAttribute="bottom" secondItem="kr1-wo-rMh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ocb-oo-62B"/>
-                            <constraint firstItem="640-OD-V34" firstAttribute="top" secondItem="16" secondAttribute="top" constant="7" id="pEs-85-3pU"/>
-                            <constraint firstItem="21" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="tHX-Dh-UNM"/>
+                            <constraint firstAttribute="bottom" secondItem="kr1-wo-rMh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="8hF-Af-sVh"/>
+                            <constraint firstItem="kr1-wo-rMh" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Es1-hR-o7h"/>
+                            <constraint firstAttribute="trailing" secondItem="kr1-wo-rMh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Jgi-0e-4M5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Test" image="TestTabBarIcon" id="7"/>
-                    <navigationItem key="navigationItem" title="Hearing Test" id="smn-5U-8ev"/>
+                    <navigationItem key="navigationItem" title="Hearing Test" id="smn-5U-8ev">
+                        <barButtonItem key="leftBarButtonItem" title="Quit Test" id="ZxG-EG-XW9">
+                            <connections>
+                                <action selector="cancelTestButtonPressed" destination="2" id="w7Y-de-KDw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="cancelButton" destination="640-OD-V34" id="vcU-Dg-yRx"/>
                         <outlet property="heardItButton" destination="kr1-wo-rMh" id="ZmJ-PB-DNn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1067" y="94"/>
+            <point key="canvasLocation" x="1517" y="94"/>
         </scene>
         <!--Results Table View Controller - Results-->
         <scene sceneID="5wZ-le-JK0">
@@ -245,7 +249,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="rootViewController" id="T7r-Q0-51E"/>
+                        <segue destination="W5N-ad-MFM" kind="relationship" relationship="rootViewController" id="CH1-vm-SVR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fic-5Z-gSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,11 +299,14 @@
         <class className="ResultsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsTableViewController.h"/>
         </class>
+        <class className="TestStartViewController" superclassName="OTViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestStartViewController.h"/>
+        </class>
         <class className="TestViewController" superclassName="OTViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TestViewController.h"/>
             <relationships>
                 <relationship kind="action" name="beginTest"/>
-                <relationship kind="action" name="cancelTest"/>
+                <relationship kind="action" name="cancelTestButtonPressed"/>
                 <relationship kind="action" name="heardTone"/>
                 <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="heardItButton" candidateClass="UIButton"/>

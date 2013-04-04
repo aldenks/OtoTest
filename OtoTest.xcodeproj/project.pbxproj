@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF10EFF6170D38E100FC1323 /* TestStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10EFF5170D38E100FC1323 /* TestStartViewController.m */; };
 		BF1615A31685294400C9CB0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A21685294400C9CB0E /* UIKit.framework */; };
 		BF1615A51685294400C9CB0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A41685294400C9CB0E /* Foundation.framework */; };
 		BF1615A71685294400C9CB0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A61685294400C9CB0E /* CoreGraphics.framework */; };
@@ -62,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF10EFF4170D38E100FC1323 /* TestStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestStartViewController.h; sourceTree = "<group>"; };
+		BF10EFF5170D38E100FC1323 /* TestStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestStartViewController.m; sourceTree = "<group>"; };
 		BF16159E1685294400C9CB0E /* OtoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1615A21685294400C9CB0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BF1615A41685294400C9CB0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -232,6 +235,8 @@
 			children = (
 				BFC027B4168E899500CE3F80 /* TestViewController.h */,
 				BFC027B5168E899500CE3F80 /* TestViewController.m */,
+				BF10EFF4170D38E100FC1323 /* TestStartViewController.h */,
+				BF10EFF5170D38E100FC1323 /* TestStartViewController.m */,
 				BF7373BE169FF5E200398A09 /* OTNavigationController.h */,
 				BF7373BF169FF5E200398A09 /* OTNavigationController.m */,
 				BFC028411691888F00CE3F80 /* ResultsTableViewController.h */,
@@ -477,6 +482,7 @@
 				BFAABC06169F4CE2002C3316 /* OtoTest.xcdatamodeld in Sources */,
 				BF7373BC169FE3A900398A09 /* ResultDetailTableViewController.m in Sources */,
 				BF7373C0169FF5E200398A09 /* OTNavigationController.m in Sources */,
+				BF10EFF6170D38E100FC1323 /* TestStartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

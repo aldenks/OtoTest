@@ -27,6 +27,11 @@
   // [appDelegate setTestViewController:self];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+  [self beginTest];
+}
+
 - (void)viewDidUnload {
   [self setHeardItButton:nil];
   [self setCancelButton:nil];
@@ -173,7 +178,13 @@
   [self performSelector:@selector(beginNextFrequency) withObject:nil afterDelay:0];
 }
 
-- (IBAction)cancelTest
+- (IBAction)cancelTestButtonPressed
+{
+  [self cancelTest];
+  [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)cancelTest
 {
   [NSObject cancelPreviousPerformRequestsWithTarget:self];
   self.heardItButton.hidden = YES;
