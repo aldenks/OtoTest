@@ -23,8 +23,6 @@
   // Do any additional setup after loading the view, typically from a nib.
   [super viewDidLoad];
   self.frequencies = [OTShared toneFiles];
-  // AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-  // [appDelegate setTestViewController:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -34,7 +32,6 @@
 
 - (void)viewDidUnload {
   [self setHeardItButton:nil];
-  [self setCancelButton:nil];
   [super viewDidUnload];
 }
 
@@ -45,7 +42,35 @@
 }
 
 #pragma mark -
-#pragma mark Testing 
+#pragma mark Testing
+
+- (IBAction)beginTest
+{
+  self.tabBarController.tabBar.userInteractionEnabled = NO;
+  OTResult *result = (OTResult *)[NSEntityDescription insertNewObjectForEntityForName:@"OTResult"
+                                                               inManagedObjectContext:self.managedObjectContext];
+  result.date = [NSDate date];
+  self.result = result;
+  self.frequencyIndex = INITIAL_FREQ_IDX;
+  // return control to UI before starting test so it's responsive and wait a second before first tone
+  [self performSelector:@selector(beginNextFrequency) withObject:nil afterDelay:3];
+}
+
+- (void)cancelTest
+{
+  [NSObject cancelPreviousPerformRequestsWithTarget:self];
+
+  if (self.result) {
+    [self.managedObjectContext deleteObject:self.result];
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+      [NSException raise:@"Managed Object Context Save Failed" format:@"%@", [error localizedDescription]];
+    }
+    self.result = nil;
+  }
+  self.tabBarController.tabBar.userInteractionEnabled = YES;
+  [self.navigationController popViewControllerAnimated:YES];
+}
 
 // Main test function. called once every INTER_TONE_TIME seconds
 - (void)doToneForTest
@@ -66,7 +91,6 @@
   
   if (self.heardLastTone) {
     if ([self isDoneWithFrequency]) {
-      NSLog(@"done with frequency");
       [self finishFrequency];
       return;
     } else {
@@ -75,20 +99,18 @@
       }
       NSLog(@"heard it, but not done with frequency: decreasing vol by %f", DECREASE_DB_AMT);
       self.dBVolume -= DECREASE_DB_AMT;
-      self.lastToneWentUp = NO;
       self.testPhase = OTTestPhaseSecond;
     }
   }
   else {
     double dBIncrease = self.testPhase == OTTestPhaseFirst ? FIRST_INCREASE_DB_AMT : SECOND_INCREASE_DB_AMT;
     self.dBVolume += dBIncrease;
-    self.lastToneWentUp = YES;
     NSLog(@"didn't hear it, increasing vol by %f", dBIncrease);
   }
   
   if ([self volumeFromDecibles:self.dBVolume] > 1.0 ||
       [self volumeFromDecibles:self.dBVolume] <=  0 ) {
-    [self cancelTest];
+    [self finishFrequency]; // give up and try next frequency
     return;
   }
   
@@ -117,7 +139,6 @@
     self.testPhase = OTTestPhaseFirst;
     self.dBVolume = INITIAL_DB;
     self.lastToneTime = nil;
-    self.lastToneWentUp = NO;
     self.heardLastTone = NO;
     self.toneHeardHistory = [NSMutableDictionary dictionaryWithCapacity:10];
     [self doToneForTest];
@@ -128,6 +149,7 @@
 
 - (void)finishFrequency
 {
+  NSLog(@"done with frequency");
   OTFrequencyResult *fr = (OTFrequencyResult *)[NSEntityDescription insertNewObjectForEntityForName:@"OTFrequencyResult"
                                                                              inManagedObjectContext:self.managedObjectContext];
 
@@ -151,10 +173,6 @@
     NSLog(@"%@: %@", fr.freq, fr.dB);
   }
   NSLog(@"");
-
-  self.heardItButton.hidden = YES;
-  self.cancelButton.hidden = YES;
-
   // TODO clean up other vars
 
   // allow self.result and its related frequency results to be released
@@ -165,45 +183,27 @@
 #pragma mark -
 #pragma mark Actions
 
-- (IBAction)beginTest
-{
-  OTResult *result = (OTResult *)[NSEntityDescription insertNewObjectForEntityForName:@"OTResult"
-                                                               inManagedObjectContext:self.managedObjectContext];
-  result.date = [NSDate date];
-  self.result = result;
-  self.frequencyIndex = INITIAL_FREQ_IDX;
-  self.heardItButton.hidden = NO;
-  self.cancelButton.hidden = NO;
-  // return control to UI before starting test so its responsive
-  [self performSelector:@selector(beginNextFrequency) withObject:nil afterDelay:0];
-}
-
 - (IBAction)cancelTestButtonPressed
 {
-  [self cancelTest];
-  [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)cancelTest
-{
-  [NSObject cancelPreviousPerformRequestsWithTarget:self];
-  self.heardItButton.hidden = YES;
-  self.cancelButton.hidden = YES;
-
-  if (self.result) {
-    [self.managedObjectContext deleteObject:self.result];
-    NSError *error = nil;
-    if (![self.managedObjectContext save:&error]) {
-      [NSException raise:@"Managed Object Context Save Failed" format:@"%@", [error localizedDescription]];
-    }
-    self.result = nil;
-  }
+  UIActionSheet * confirmQuitSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self
+                                     cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Quit Test"
+                                     otherButtonTitles:nil];
+  [confirmQuitSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+  [confirmQuitSheet showFromTabBar:self.tabBarController.tabBar];
 }
 
 - (IBAction)heardTone
 {
   if (self.lastToneTime && ([self.lastToneTime timeIntervalSinceNow]*-1) <= RECOGNITION_WINDOW) 
     self.heardLastTone = YES;
+}
+
+#pragma mark - Action Sheet Delegate
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  if (buttonIndex == actionSheet.destructiveButtonIndex)
+    [self cancelTest];
 }
 
 #pragma mark -

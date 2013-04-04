@@ -26,7 +26,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="beginTest" destination="2" eventType="touchUpInside" id="mPt-Ki-ILJ"/>
                                     <segue destination="2" kind="push" id="bV3-lM-eNg"/>
                                 </connections>
                             </button>

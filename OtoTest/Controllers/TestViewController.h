@@ -28,10 +28,9 @@ typedef enum {
   OTTestPhaseSecond, // narowing on and finding the threshold
 } OTTestPhase;
 
-@interface TestViewController : OTViewController
+@interface TestViewController : OTViewController <UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *heardItButton;
-@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @property AVAudioPlayer *player;
 @property NSArray *frequencies;
@@ -41,7 +40,6 @@ typedef enum {
 @property NSUInteger frequencyIndex; // current index into the frequencies array
 @property double dBVolume;           // last decible volume played
 @property NSDate *lastToneTime;      // time at which the most recent tone was played
-@property BOOL lastToneWentUp;       // was the volume increased for the last tone?
 @property BOOL heardLastTone;        // has user heard most recent tone?
 @property NSMutableDictionary *toneHeardHistory; // heard tone? key: string of dB, value: BOOL array for last 0-4 tones
 
