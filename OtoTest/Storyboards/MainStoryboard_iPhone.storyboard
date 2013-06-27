@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="W5N-ad-MFM" customClass="TestStartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="em7-IT-da4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Im-ST-H7d">
@@ -40,10 +40,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="21" firstAttribute="leading" secondItem="em7-IT-da4" secondAttribute="leading" type="default" id="5zK-yA-PDm"/>
-                            <constraint firstItem="21" firstAttribute="centerX" secondItem="6Im-ST-H7d" secondAttribute="centerX" type="default" id="7td-mn-Fix"/>
                             <constraint firstItem="21" firstAttribute="trailing" secondItem="em7-IT-da4" secondAttribute="trailing" type="default" id="URY-by-qfs"/>
                             <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ch8-4O-QHj"/>
-                            <constraint firstItem="6Im-ST-H7d" firstAttribute="top" secondItem="em7-IT-da4" secondAttribute="top" constant="147" id="xMV-N6-N6I"/>
+                            <constraint firstItem="6Im-ST-H7d" firstAttribute="top" secondItem="em7-IT-da4" secondAttribute="top" constant="147" id="kvt-V5-eyj"/>
+                            <constraint firstItem="6Im-ST-H7d" firstAttribute="centerX" secondItem="21" secondAttribute="centerX" type="default" id="vJU-Fx-wg2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hearing Test" id="S8P-Lt-NzI"/>
@@ -57,7 +57,7 @@
             <objects>
                 <viewController title="First" modalTransitionStyle="partialCurl" id="2" customClass="TestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr1-wo-rMh">
@@ -111,7 +111,7 @@
             <objects>
                 <tableViewController id="xx0-Ri-S4f" customClass="ResultsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oWB-hJ-dGk">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -154,7 +154,7 @@
             <objects>
                 <tableViewController id="9bJ-pA-sy4" customClass="ResultDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="PSS-s8-36Y">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -319,6 +319,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

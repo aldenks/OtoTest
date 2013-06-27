@@ -34,23 +34,14 @@
   // self.clearsSelectionOnViewWillAppear = NO;
   
   // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-  // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
 
-  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"OTResult"];
-  [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
-  
-  NSError *error = nil;
-  NSMutableArray *fetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-  if (fetchResults == nil) {
-    // Handle the error.
-    return;
-  }
-  self.results = fetchResults;
+  self.results = [self fetchAllResults];
   [self.tableView reloadData];
 }
 
@@ -58,6 +49,17 @@
 {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Core Data
+
+- (NSMutableArray *)fetchAllResults
+{
+  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"OTResult"];
+  [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
+
+  NSError *error = nil;
+  return [[self.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
 }
 
 #pragma mark - Table View Segue
@@ -118,19 +120,20 @@
  }
  */
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }   
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }   
- }
- */
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+    // Delete the row from the data source
+    [self.managedObjectContext deleteObject:self.results[indexPath.row]];
+    [self.managedObjectContext save:nil];
+    self.results = [self fetchAllResults];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+  }
+  else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+  }
+}
 
 /*
  // Override to support rearranging the table view.

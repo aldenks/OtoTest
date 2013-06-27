@@ -15,4 +15,6 @@
 
 @property NSMutableArray *results;
 
+- (NSMutableArray *)fetchAllResults;
+
 @end

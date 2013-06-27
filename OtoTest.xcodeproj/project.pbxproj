@@ -49,7 +49,6 @@
 		BFC35EBA16A1064D00E9467A /* ResultsTabBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EB816A1064D00E9467A /* ResultsTabBarIcon@2x.png */; };
 		BFC35EBD16A10B2900E9467A /* TestTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EBB16A10B2900E9467A /* TestTabBarIcon.png */; };
 		BFC35EBE16A10B2900E9467A /* TestTabBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EBC16A10B2900E9467A /* TestTabBarIcon@2x.png */; };
-		BFC35EC016A10E9E00E9467A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EBF16A10E9E00E9467A /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -436,7 +435,6 @@
 				BFC35EBA16A1064D00E9467A /* ResultsTabBarIcon@2x.png in Resources */,
 				BFC35EBD16A10B2900E9467A /* TestTabBarIcon.png in Resources */,
 				BFC35EBE16A10B2900E9467A /* TestTabBarIcon@2x.png in Resources */,
-				BFC35EC016A10E9E00E9467A /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +581,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = OtoTest;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -603,6 +602,7 @@
 				PRODUCT_NAME = OtoTest;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
