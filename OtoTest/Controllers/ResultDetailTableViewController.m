@@ -40,7 +40,7 @@
 {
   self.title = [[self dateFormatter] stringFromDate:self.result.date];
   
-  NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"freq" ascending:NO];
+  NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"freq" ascending:YES selector:@selector(localizedStandardCompare:)];
   self.freqResults = [self.result.frequencyResults sortedArrayUsingDescriptors:@[sortDescriptor]];
 }
 
