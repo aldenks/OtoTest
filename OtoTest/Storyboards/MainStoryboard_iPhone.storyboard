@@ -61,9 +61,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr1-wo-rMh">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="332" id="OMS-xA-U5X"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                 <state key="normal" title="Heard It">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,6 +79,7 @@
                             <constraint firstAttribute="bottom" secondItem="kr1-wo-rMh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="8hF-Af-sVh"/>
                             <constraint firstItem="kr1-wo-rMh" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Es1-hR-o7h"/>
                             <constraint firstAttribute="trailing" secondItem="kr1-wo-rMh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Jgi-0e-4M5"/>
+                            <constraint firstItem="kr1-wo-rMh" firstAttribute="top" secondItem="16" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Xsh-4i-DQ9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Test" image="TestTabBarIcon" id="7"/>
@@ -91,11 +89,17 @@
                                 <action selector="cancelTestButtonPressed" destination="2" id="w7Y-de-KDw"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" width="100" systemItem="pause" id="z59-4z-zDg">
+                            <connections>
+                                <action selector="pauseButtonPressed:" destination="2" id="1ip-Yf-By9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="heardItButton" destination="kr1-wo-rMh" id="ZmJ-PB-DNn"/>
+                        <outlet property="pauseButton" destination="z59-4z-zDg" id="DqX-Dr-vGr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -304,11 +308,11 @@
         <class className="TestViewController" superclassName="OTViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TestViewController.h"/>
             <relationships>
-                <relationship kind="action" name="beginTest"/>
                 <relationship kind="action" name="cancelTestButtonPressed"/>
                 <relationship kind="action" name="heardTone"/>
-                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
+                <relationship kind="action" name="pauseButtonPressed:"/>
                 <relationship kind="outlet" name="heardItButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
     </classes>

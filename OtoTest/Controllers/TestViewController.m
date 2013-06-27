@@ -32,6 +32,7 @@
 
 - (void)viewDidUnload {
   [self setHeardItButton:nil];
+  [self setPauseButton:nil];
   [super viewDidUnload];
 }
 
@@ -41,10 +42,16 @@
   // Dispose of any resources that can be recreated.
 }
 
+- (void)popTestUI
+{
+  self.tabBarController.tabBar.userInteractionEnabled = YES;
+  [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark -
 #pragma mark Testing
 
-- (IBAction)beginTest
+- (void)beginTest
 {
   self.tabBarController.tabBar.userInteractionEnabled = NO;
   OTResult *result = (OTResult *)[NSEntityDescription insertNewObjectForEntityForName:@"OTResult"
@@ -52,8 +59,19 @@
   result.date = [NSDate date];
   self.result = result;
   self.frequencyIndex = INITIAL_FREQ_IDX;
-  // return control to UI before starting test so it's responsive and wait a second before first tone
-  [self performSelector:@selector(beginNextFrequency) withObject:nil afterDelay:3];
+  self.paused = false;
+  [self beginNextFrequency];
+}
+
+- (void)finishTest
+{
+  [OTShared logTestResult:self.result];
+  // TODO clean up other vars
+
+  // allow self.result and its related frequency results to be released
+  [self.managedObjectContext refreshObject:self.result mergeChanges:NO];
+  self.result = nil;
+  [self popTestUI];
 }
 
 - (void)cancelTest
@@ -68,68 +86,72 @@
     }
     self.result = nil;
   }
-  self.tabBarController.tabBar.userInteractionEnabled = YES;
-  [self.navigationController popViewControllerAnimated:YES];
+  [self popTestUI];
+  NSLog(@"Canceled test");
+}
+
+- (void)pauseTest
+{
+  self.paused = true;
+  [NSObject cancelPreviousPerformRequestsWithTarget:self];
+  NSLog(@"Pausing test");
+}
+
+- (void)resumeTest
+{
+  [self performSelector:@selector(doToneForTest) withObject:nil afterDelay:1];
+  NSLog(@"Resuming test");
 }
 
 // Main test function. called once every INTER_TONE_TIME seconds
 - (void)doToneForTest
 {
-  if (self.testPhase == OTTestPhaseSecond) {
-    // maintain a history of the 4 most recent "heard it?" results for each dB value
-    NSString *dBString = [NSString stringWithFormat:@"%.1f", self.dBVolume];
-    NSMutableArray *toneHeardHistoryForDB = self.toneHeardHistory[dBString];
-    if (!toneHeardHistoryForDB) {
-      toneHeardHistoryForDB = [NSMutableArray arrayWithCapacity:4];
-      self.toneHeardHistory[dBString] = toneHeardHistoryForDB;
-    }
-    if (toneHeardHistoryForDB.count > 4)
-      [toneHeardHistoryForDB removeObjectAtIndex:0];
-    [toneHeardHistoryForDB addObject:[NSNumber numberWithBool:self.heardLastTone]];
-    NSLog(@"heard history:%@", self.toneHeardHistory);
-  }
-  
-  if (self.heardLastTone) {
-    if ([self isDoneWithFrequency]) {
-      [self finishFrequency];
-      return;
-    } else {
-      if (self.testPhase == OTTestPhaseFirst) {
-        NSLog(@"Entering 2nd phase");
+  if (!self.paused) {
+    if (self.testPhase == OTTestPhaseSecond) {
+      // maintain a history of the 4 most recent "heard it?" results for each dB value
+      NSString *dBString = [NSString stringWithFormat:@"%.1f", self.dBVolume];
+      NSMutableArray *toneHeardHistoryForDB = self.toneHeardHistory[dBString];
+      if (!toneHeardHistoryForDB) {
+        toneHeardHistoryForDB = [NSMutableArray arrayWithCapacity:4];
+        self.toneHeardHistory[dBString] = toneHeardHistoryForDB;
       }
-      NSLog(@"heard it, but not done with frequency: decreasing vol by %f", DECREASE_DB_AMT);
-      self.dBVolume -= DECREASE_DB_AMT;
-      self.testPhase = OTTestPhaseSecond;
+      if (toneHeardHistoryForDB.count > 4)
+        [toneHeardHistoryForDB removeObjectAtIndex:0];
+      [toneHeardHistoryForDB addObject:[NSNumber numberWithBool:self.heardLastTone]];
+      NSLog(@"heard history:%@", self.toneHeardHistory);
+    }
+
+    if (self.heardLastTone) {
+      if ([self isDoneWithFrequency]) {
+        [self finishFrequency];
+        return;
+      } else {
+        if (self.testPhase == OTTestPhaseFirst) {
+          NSLog(@"Entering 2nd phase");
+        }
+        NSLog(@"heard it, but not done with frequency: decreasing vol by %f", DECREASE_DB_AMT);
+        self.dBVolume -= DECREASE_DB_AMT;
+        self.testPhase = OTTestPhaseSecond;
+      }
+    }
+    else {
+      double dBIncrease = self.testPhase == OTTestPhaseFirst ? FIRST_INCREASE_DB_AMT : SECOND_INCREASE_DB_AMT;
+      self.dBVolume += dBIncrease;
+      NSLog(@"didn't hear it, increasing vol by %f", dBIncrease);
+    }
+
+    if ([self volumeFromDecibles:self.dBVolume] > 1.0 ||
+        [self volumeFromDecibles:self.dBVolume] <=  0 ) {
+      [self finishFrequency]; // give up and try next frequency
+      return;
     }
   }
-  else {
-    double dBIncrease = self.testPhase == OTTestPhaseFirst ? FIRST_INCREASE_DB_AMT : SECOND_INCREASE_DB_AMT;
-    self.dBVolume += dBIncrease;
-    NSLog(@"didn't hear it, increasing vol by %f", dBIncrease);
-  }
-  
-  if ([self volumeFromDecibles:self.dBVolume] > 1.0 ||
-      [self volumeFromDecibles:self.dBVolume] <=  0 ) {
-    [self finishFrequency]; // give up and try next frequency
-    return;
-  }
-  
+
+  self.paused = false;
   [self playCurrentTone];
   self.heardLastTone = NO;
   self.lastToneTime  = [NSDate date];
   [self performSelector:@selector(doToneForTest) withObject:nil afterDelay:INTER_TONE_TIME];
-}
-
-- (BOOL)isDoneWithFrequency
-{
-  NSString *dBString = [NSString stringWithFormat:@"%.1f", self.dBVolume];
-  NSArray *toneHeardHistoryForDB = self.toneHeardHistory[dBString];
-  if (self.testPhase != OTTestPhaseSecond || !toneHeardHistoryForDB)
-    return NO;
-  NSArray *ayes = [toneHeardHistoryForDB select:^(id heard, NSUInteger idx) {
-    return [heard boolValue];
-  }];
-  return [ayes count] >= 2;
 }
 
 - (void)beginNextFrequency
@@ -141,7 +163,12 @@
     self.lastToneTime = nil;
     self.heardLastTone = NO;
     self.toneHeardHistory = [NSMutableDictionary dictionaryWithCapacity:10];
-    [self doToneForTest];
+    if (self.frequencyIndex == 0) {
+      // return control to UI before starting test so it's responsive and wait a second before first tone
+      [self performSelector:@selector(doToneForTest) withObject:nil afterDelay:3];
+    } else {
+      [self doToneForTest];
+    }
   } else {
     [self finishTest];
   }
@@ -155,10 +182,9 @@
 
   fr.freq = self.frequencies[self.frequencyIndex];
   fr.dB = @(self.dBVolume);
-  fr.result = self.result;
   [self.result addFrequencyResultsObject:fr];
 
-  NSError *error = nil;
+  NSError *error;
   if (![self.managedObjectContext save:&error]) {
     [NSException raise:@"Managed Object Context Save Failed" format:@"%@", [error localizedDescription]];
   }
@@ -166,31 +192,19 @@
   [self beginNextFrequency];
 }
 
-- (void)finishTest
+- (BOOL)isDoneWithFrequency
 {
-  NSLog(@"RESULT %@", self.result.date);
-  for (OTFrequencyResult *fr in self.result.frequencyResults) {
-    NSLog(@"%@: %@", fr.freq, fr.dB);
-  }
-  NSLog(@"");
-  // TODO clean up other vars
-
-  // allow self.result and its related frequency results to be released
-  [self.managedObjectContext refreshObject:self.result mergeChanges:NO];
-  self.result = nil;
+  NSString *dBString = [NSString stringWithFormat:@"%.1f", self.dBVolume];
+  NSArray *toneHeardHistoryForDB = self.toneHeardHistory[dBString];
+  if (self.testPhase != OTTestPhaseSecond || !toneHeardHistoryForDB)
+    return NO;
+  NSArray *ayes = [toneHeardHistoryForDB select:^(id heard, NSUInteger idx) {
+    return [heard boolValue]; }];
+  return [ayes count] >= 2;
 }
 
 #pragma mark -
 #pragma mark Actions
-
-- (IBAction)cancelTestButtonPressed
-{
-  UIActionSheet * confirmQuitSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self
-                                     cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Quit Test"
-                                     otherButtonTitles:nil];
-  [confirmQuitSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
-  [confirmQuitSheet showFromTabBar:self.tabBarController.tabBar];
-}
 
 - (IBAction)heardTone
 {
@@ -198,12 +212,40 @@
     self.heardLastTone = YES;
 }
 
+- (IBAction)cancelTestButtonPressed
+{
+  [self pauseTest];
+  UIActionSheet * confirmQuitSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self
+                                     cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Quit"
+                                     otherButtonTitles:nil];
+  [confirmQuitSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+  [confirmQuitSheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+- (IBAction)pauseButtonPressed:(id)sender
+{
+  UIBarButtonItem *rightNavButton;
+  if (self.paused) {
+    [self resumeTest];
+    rightNavButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause
+                                           target:self action:@selector(pauseButtonPressed:)];
+  } else {
+    [self pauseTest];
+    rightNavButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay
+                                           target:self action:@selector(pauseButtonPressed:)];
+  }
+  self.navigationItem.rightBarButtonItem = rightNavButton;
+}
+
 #pragma mark - Action Sheet Delegate
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-  if (buttonIndex == actionSheet.destructiveButtonIndex)
+  if (buttonIndex == actionSheet.destructiveButtonIndex) {
     [self cancelTest];
+  } else if (buttonIndex == actionSheet.cancelButtonIndex) {
+    [self resumeTest];
+  }
 }
 
 #pragma mark -
@@ -218,7 +260,6 @@
 - (void)playAudioResource:(NSString *)resource withExtension:(NSString *)ext
 {
   NSURL *soundURL = [[NSBundle mainBundle] URLForResource:resource withExtension:ext];
-  // TODO handle error
   self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
   self.player.volume = [self volumeFromDecibles:self.dBVolume];
   [self.player play];
@@ -228,8 +269,6 @@
 {
   [self cancelTest];
 }
-
-
 
 #pragma mark - Utils
 - (double)volumeFromDecibles:(double)decibles

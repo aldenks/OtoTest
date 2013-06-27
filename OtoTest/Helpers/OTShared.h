@@ -14,5 +14,6 @@
 @interface OTShared : NSObject
 
 + (NSArray *)toneFiles;
++ (void)logTestResult:(OTResult *)result;
 
 @end

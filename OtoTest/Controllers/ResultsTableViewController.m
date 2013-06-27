@@ -41,10 +41,8 @@
 {
   [super viewWillAppear:animated];
 
-  NSFetchRequest *request = [[NSFetchRequest alloc] init];
-  request.entity = [NSEntityDescription entityForName:@"OTResult" inManagedObjectContext:self.managedObjectContext];
-  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
-  [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"OTResult"];
+  [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
   
   NSError *error = nil;
   NSMutableArray *fetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];

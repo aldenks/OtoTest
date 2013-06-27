@@ -11,7 +11,7 @@
 #import "OTViewController.h"
 #import "AppDelegate.h"
 
-#define INTER_TONE_TIME        5.0   // in seconds
+#define INTER_TONE_TIME        5.0   // in seconds (TODO: make it random)
 #define RECOGNITION_WINDOW     4.0   // in seconds
 #define FIRST_INCREASE_DB_AMT  20.0  // in decibles
 #define SECOND_INCREASE_DB_AMT 5.0
@@ -31,25 +31,29 @@ typedef enum {
 @interface TestViewController : OTViewController <UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *heardItButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *pauseButton;
 
 @property AVAudioPlayer *player;
 @property NSArray *frequencies;
 
 @property OTResult *result;          // The result object for the current test
 @property OTTestPhase testPhase;     // current phase of the test
+@property BOOL paused;               // is the test paused?
 @property NSUInteger frequencyIndex; // current index into the frequencies array
 @property double dBVolume;           // last decible volume played
 @property NSDate *lastToneTime;      // time at which the most recent tone was played
 @property BOOL heardLastTone;        // has user heard most recent tone?
 @property NSMutableDictionary *toneHeardHistory; // heard tone? key: string of dB, value: BOOL array for last 0-4 tones
 
-- (IBAction)beginTest;
+- (void)popTestUI;
+- (void)beginTest;
 - (IBAction)heardTone;
+- (IBAction)pauseButtonPressed:(id)sender;
+- (IBAction)cancelTestButtonPressed;
 
 - (void)doToneForTest;
 - (void)finishFrequency;
 - (void)finishTest;
-- (IBAction)cancelTestButtonPressed;
 - (void)cancelTest;
 - (BOOL)isDoneWithFrequency;
 
