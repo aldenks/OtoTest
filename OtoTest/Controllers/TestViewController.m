@@ -93,12 +93,18 @@
 - (void)pauseTest
 {
   self.paused = true;
+  self.heardItButton.enabled = NO;
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay
+                                                                    target:self action:@selector(pauseButtonPressed:)];
   [NSObject cancelPreviousPerformRequestsWithTarget:self];
   NSLog(@"Pausing test");
 }
 
 - (void)resumeTest
 {
+  self.heardItButton.enabled = YES;
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause
+                                                                    target:self action:@selector(pauseButtonPressed:)];
   [self performSelector:@selector(doToneForTest) withObject:nil afterDelay:1];
   NSLog(@"Resuming test");
 }
@@ -224,17 +230,7 @@
 
 - (IBAction)pauseButtonPressed:(id)sender
 {
-  UIBarButtonItem *rightNavButton;
-  if (self.paused) {
-    [self resumeTest];
-    rightNavButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause
-                                           target:self action:@selector(pauseButtonPressed:)];
-  } else {
-    [self pauseTest];
-    rightNavButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay
-                                           target:self action:@selector(pauseButtonPressed:)];
-  }
-  self.navigationItem.rightBarButtonItem = rightNavButton;
+  self.paused ? [self resumeTest] : [self pauseTest];
 }
 
 #pragma mark - Action Sheet Delegate

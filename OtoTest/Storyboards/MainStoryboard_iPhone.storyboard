@@ -9,15 +9,15 @@
             <objects>
                 <viewController id="W5N-ad-MFM" customClass="TestStartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="em7-IT-da4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Im-ST-H7d">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="cLO-pI-wgx"/>
-                                    <constraint firstAttribute="width" constant="176" id="s41-ki-ygV"/>
+                                    <constraint firstAttribute="height" constant="74" id="8cN-Q2-kEx"/>
+                                    <constraint firstAttribute="width" constant="163" id="eQr-F9-k3w"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" title="Begin Test">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,10 +40,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="21" firstAttribute="leading" secondItem="em7-IT-da4" secondAttribute="leading" type="default" id="5zK-yA-PDm"/>
-                            <constraint firstItem="21" firstAttribute="trailing" secondItem="em7-IT-da4" secondAttribute="trailing" type="default" id="URY-by-qfs"/>
+                            <constraint firstItem="6Im-ST-H7d" firstAttribute="centerX" secondItem="21" secondAttribute="centerX" type="default" id="8CE-gF-iC4"/>
                             <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ch8-4O-QHj"/>
-                            <constraint firstItem="6Im-ST-H7d" firstAttribute="top" secondItem="em7-IT-da4" secondAttribute="top" constant="147" id="kvt-V5-eyj"/>
-                            <constraint firstItem="6Im-ST-H7d" firstAttribute="centerX" secondItem="21" secondAttribute="centerX" type="default" id="vJU-Fx-wg2"/>
+                            <constraint firstItem="21" firstAttribute="trailing" secondItem="em7-IT-da4" secondAttribute="trailing" type="default" id="pNe-OO-L4b"/>
+                            <constraint firstItem="6Im-ST-H7d" firstAttribute="top" secondItem="em7-IT-da4" secondAttribute="top" constant="147" id="tSi-KP-IAR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hearing Test" id="S8P-Lt-NzI"/>
@@ -57,7 +57,7 @@
             <objects>
                 <viewController title="First" modalTransitionStyle="partialCurl" id="2" customClass="TestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr1-wo-rMh">
@@ -65,6 +65,9 @@
                                 <state key="normal" title="Heard It">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,7 +113,7 @@
             <objects>
                 <tableViewController id="xx0-Ri-S4f" customClass="ResultsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oWB-hJ-dGk">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -153,7 +156,7 @@
             <objects>
                 <tableViewController id="9bJ-pA-sy4" customClass="ResultDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="PSS-s8-36Y">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -299,7 +302,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gN-6T-Gma" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="QXB-ua-tPH" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1n3-xM-sF3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="jane@example.org" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9cB-n0-AFS">
@@ -380,6 +383,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
