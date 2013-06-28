@@ -166,8 +166,8 @@
   }
   [mailer setMailComposeDelegate:self];
   [mailer setSubject:subject];
-  // TODO real email
-  [mailer setToRecipients:@[@"results@test.org"]];
+  NSString *toEmail = [[NSUserDefaults standardUserDefaults] stringForKey:@"results_to_email"];
+  [mailer setToRecipients:@[toEmail]];
   [mailer setMessageBody:body isHTML:NO];
   [self presentViewController:mailer animated:YES completion:nil];
 }

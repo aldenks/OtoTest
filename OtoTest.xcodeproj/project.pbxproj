@@ -18,6 +18,10 @@
 		BF7373C0169FF5E200398A09 /* OTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7373BF169FF5E200398A09 /* OTNavigationController.m */; };
 		BFAABC03169EB45E002C3316 /* HearingTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAABC02169EB45E002C3316 /* HearingTestTests.m */; };
 		BFAABC06169F4CE2002C3316 /* OtoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFAABC04169F4CE2002C3316 /* OtoTest.xcdatamodeld */; };
+		BFB95A32177CFC9E007D96DD /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB95A31177CFC9E007D96DD /* SettingsViewController.m */; };
+		BFB95A33177D0819007D96DD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EBF16A10E9E00E9467A /* Default-568h@2x.png */; };
+		BFB95A36177D0BD6007D96DD /* SettingsTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB95A34177D0BD5007D96DD /* SettingsTabBarIcon.png */; };
+		BFB95A37177D0BD6007D96DD /* SettingsTabBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB95A35177D0BD6007D96DD /* SettingsTabBarIcon@2x.png */; };
 		BFC0276E168E299C00CE3F80 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC0276C168E297600CE3F80 /* SenTestingKit.framework */; };
 		BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC027AC168E899500CE3F80 /* InfoPlist.strings */; };
 		BFC027CB168E899500CE3F80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B2168E899500CE3F80 /* AppDelegate.m */; };
@@ -77,6 +81,10 @@
 		BFAABC01169EB45E002C3316 /* HearingTestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HearingTestTests.h; sourceTree = "<group>"; };
 		BFAABC02169EB45E002C3316 /* HearingTestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HearingTestTests.m; sourceTree = "<group>"; };
 		BFAABC05169F4CE2002C3316 /* OtoTest0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OtoTest0.xcdatamodel; sourceTree = "<group>"; };
+		BFB95A30177CFC9E007D96DD /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		BFB95A31177CFC9E007D96DD /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		BFB95A34177D0BD5007D96DD /* SettingsTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsTabBarIcon.png; sourceTree = "<group>"; };
+		BFB95A35177D0BD6007D96DD /* SettingsTabBarIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SettingsTabBarIcon@2x.png"; sourceTree = "<group>"; };
 		BFC0276C168E297600CE3F80 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BFC027A9168E899500CE3F80 /* OtoTestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtoTestTests.h; sourceTree = "<group>"; };
 		BFC027AA168E899500CE3F80 /* OtoTestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtoTestTests.m; sourceTree = "<group>"; };
@@ -244,6 +252,8 @@
 				BF7373BB169FE3A900398A09 /* ResultDetailTableViewController.m */,
 				BFC0283D16917C5600CE3F80 /* OTViewController.h */,
 				BFC0283E16917C5600CE3F80 /* OTViewController.m */,
+				BFB95A30177CFC9E007D96DD /* SettingsViewController.h */,
+				BFB95A31177CFC9E007D96DD /* SettingsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -261,6 +271,8 @@
 		BFC027BB168E899500CE3F80 /* TabBarItems */ = {
 			isa = PBXGroup;
 			children = (
+				BFB95A34177D0BD5007D96DD /* SettingsTabBarIcon.png */,
+				BFB95A35177D0BD6007D96DD /* SettingsTabBarIcon@2x.png */,
 				BFC35EBB16A10B2900E9467A /* TestTabBarIcon.png */,
 				BFC35EBC16A10B2900E9467A /* TestTabBarIcon@2x.png */,
 				BFC35EB716A1064D00E9467A /* ResultsTabBarIcon.png */,
@@ -435,6 +447,9 @@
 				BFC35EBA16A1064D00E9467A /* ResultsTabBarIcon@2x.png in Resources */,
 				BFC35EBD16A10B2900E9467A /* TestTabBarIcon.png in Resources */,
 				BFC35EBE16A10B2900E9467A /* TestTabBarIcon@2x.png in Resources */,
+				BFB95A33177D0819007D96DD /* Default-568h@2x.png in Resources */,
+				BFB95A36177D0BD6007D96DD /* SettingsTabBarIcon.png in Resources */,
+				BFB95A37177D0BD6007D96DD /* SettingsTabBarIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +496,7 @@
 				BF7373BC169FE3A900398A09 /* ResultDetailTableViewController.m in Sources */,
 				BF7373C0169FF5E200398A09 /* OTNavigationController.m in Sources */,
 				BF10EFF6170D38E100FC1323 /* TestStartViewController.m in Sources */,
+				BFB95A32177CFC9E007D96DD /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +597,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = OtoTest;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -602,7 +618,7 @@
 				PRODUCT_NAME = OtoTest;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

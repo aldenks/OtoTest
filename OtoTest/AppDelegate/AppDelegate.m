@@ -18,6 +18,8 @@
 {
   [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
 
+  [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"results_to_email": @"" }];
+
   UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
   for (id vc in [tabBarController viewControllers]) {
     if ([vc respondsToSelector:@selector(setManagedObjectContext:)])
