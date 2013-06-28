@@ -55,7 +55,7 @@
         <!--Test View Controller - First-->
         <scene sceneID="11">
             <objects>
-                <viewController title="First" modalTransitionStyle="partialCurl" id="2" customClass="TestViewController" sceneMemberID="viewController">
+                <viewController title="First" modalTransitionStyle="partialCurl" hidesBottomBarWhenPushed="YES" id="2" customClass="TestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,6 @@
                             <constraint firstItem="kr1-wo-rMh" firstAttribute="top" secondItem="16" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Xsh-4i-DQ9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Test" image="TestTabBarIcon" id="7"/>
                     <navigationItem key="navigationItem" title="Hearing Test" id="smn-5U-8ev">
                         <barButtonItem key="leftBarButtonItem" title="Quit Test" id="ZxG-EG-XW9">
                             <connections>

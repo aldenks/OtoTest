@@ -44,7 +44,6 @@
 
 - (void)popTestUI
 {
-  self.tabBarController.tabBar.userInteractionEnabled = YES;
   [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -53,7 +52,6 @@
 
 - (void)beginTest
 {
-  self.tabBarController.tabBar.userInteractionEnabled = NO;
   OTResult *result = (OTResult *)[NSEntityDescription insertNewObjectForEntityForName:@"OTResult"
                                                                inManagedObjectContext:self.managedObjectContext];
   result.date = [NSDate date];
@@ -102,6 +100,8 @@
 
 - (void)resumeTest
 {
+  // needed so that double tapping the play/pause button won't cause two tones
+  [NSObject cancelPreviousPerformRequestsWithTarget:self];
   self.heardItButton.enabled = YES;
   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause
                                                                     target:self action:@selector(pauseButtonPressed:)];
