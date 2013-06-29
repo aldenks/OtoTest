@@ -133,6 +133,15 @@
 
 #pragma mark - Table view delegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (indexPath.section == 1) {
+    return 80;
+  } else {
+    return tableView.rowHeight;
+  }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
@@ -169,6 +178,7 @@
   NSString *toEmail = [[NSUserDefaults standardUserDefaults] stringForKey:@"results_to_email"];
   [mailer setToRecipients:@[toEmail]];
   [mailer setMessageBody:body isHTML:NO];
+  mailer.navigationBar.tintColor = self.navigationController.navigationBar.tintColor;
   [self presentViewController:mailer animated:YES completion:nil];
 }
 
