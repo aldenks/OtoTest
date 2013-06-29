@@ -182,11 +182,11 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmailButtonCell" rowHeight="80" id="Vwm-5i-0qZ">
-                                <rect key="frame" x="0.0" y="66" width="320" height="80"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmailButtonCell" id="Vwm-5i-0qZ">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uym-q4-nVI">
@@ -211,7 +211,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="uym-q4-nVI" firstAttribute="top" secondItem="Vwm-5i-0qZ" secondAttribute="top" constant="38" id="8l7-Nh-Ks1"/>
+                                    <constraint firstItem="uym-q4-nVI" firstAttribute="centerY" secondItem="Vwm-5i-0qZ" secondAttribute="centerY" type="default" id="UtK-p8-FPo"/>
                                     <constraint firstItem="uym-q4-nVI" firstAttribute="centerX" secondItem="Vwm-5i-0qZ" secondAttribute="centerX" type="default" id="Zqv-Yd-bsI"/>
                                 </constraints>
                             </tableViewCell>
@@ -369,45 +369,6 @@
         <image name="SettingsTabBarIcon" width="16" height="16"/>
         <image name="TestTabBarIcon" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="OTNavigationController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OTNavigationController.h"/>
-        </class>
-        <class className="OTViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OTViewController.h"/>
-        </class>
-        <class className="ResultDetailTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultDetailTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="presentMailer"/>
-            </relationships>
-        </class>
-        <class className="ResultsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsTableViewController.h"/>
-        </class>
-        <class className="SettingsViewController" superclassName="OTViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="toEmailAddressTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="TestStartViewController" superclassName="OTViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestStartViewController.h"/>
-        </class>
-        <class className="TestViewController" superclassName="OTViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelTestButtonPressed"/>
-                <relationship kind="action" name="heardTone"/>
-                <relationship kind="action" name="pauseButtonPressed:"/>
-                <relationship kind="outlet" name="heardItButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
