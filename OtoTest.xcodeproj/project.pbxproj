@@ -16,12 +16,14 @@
 		BF3867D81696CEE600D46E58 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3867D71696CEE600D46E58 /* MessageUI.framework */; };
 		BF7373BC169FE3A900398A09 /* ResultDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7373BB169FE3A900398A09 /* ResultDetailTableViewController.m */; };
 		BF7373C0169FF5E200398A09 /* OTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7373BF169FF5E200398A09 /* OTNavigationController.m */; };
+		BF7E082E177EC99F000A2253 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7E082C177EC965000A2253 /* CoreImage.framework */; };
 		BFAABC03169EB45E002C3316 /* HearingTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAABC02169EB45E002C3316 /* HearingTestTests.m */; };
 		BFAABC06169F4CE2002C3316 /* OtoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFAABC04169F4CE2002C3316 /* OtoTest.xcdatamodeld */; };
 		BFB95A32177CFC9E007D96DD /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB95A31177CFC9E007D96DD /* SettingsViewController.m */; };
 		BFB95A33177D0819007D96DD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC35EBF16A10E9E00E9467A /* Default-568h@2x.png */; };
 		BFB95A36177D0BD6007D96DD /* SettingsTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB95A34177D0BD5007D96DD /* SettingsTabBarIcon.png */; };
 		BFB95A37177D0BD6007D96DD /* SettingsTabBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB95A35177D0BD6007D96DD /* SettingsTabBarIcon@2x.png */; };
+		BFB95A3A177E70B6007D96DD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB95A39177E70B6007D96DD /* Crashlytics.framework */; };
 		BFC0276E168E299C00CE3F80 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC0276C168E297600CE3F80 /* SenTestingKit.framework */; };
 		BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC027AC168E899500CE3F80 /* InfoPlist.strings */; };
 		BFC027CB168E899500CE3F80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B2168E899500CE3F80 /* AppDelegate.m */; };
@@ -78,6 +80,7 @@
 		BF7373BB169FE3A900398A09 /* ResultDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultDetailTableViewController.m; sourceTree = "<group>"; };
 		BF7373BE169FF5E200398A09 /* OTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTNavigationController.h; sourceTree = "<group>"; };
 		BF7373BF169FF5E200398A09 /* OTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTNavigationController.m; sourceTree = "<group>"; };
+		BF7E082C177EC965000A2253 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		BFAABC01169EB45E002C3316 /* HearingTestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HearingTestTests.h; sourceTree = "<group>"; };
 		BFAABC02169EB45E002C3316 /* HearingTestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HearingTestTests.m; sourceTree = "<group>"; };
 		BFAABC05169F4CE2002C3316 /* OtoTest0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OtoTest0.xcdatamodel; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		BFB95A31177CFC9E007D96DD /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		BFB95A34177D0BD5007D96DD /* SettingsTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsTabBarIcon.png; sourceTree = "<group>"; };
 		BFB95A35177D0BD6007D96DD /* SettingsTabBarIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SettingsTabBarIcon@2x.png"; sourceTree = "<group>"; };
+		BFB95A39177E70B6007D96DD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BFC0276C168E297600CE3F80 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BFC027A9168E899500CE3F80 /* OtoTestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtoTestTests.h; sourceTree = "<group>"; };
 		BFC027AA168E899500CE3F80 /* OtoTestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtoTestTests.m; sourceTree = "<group>"; };
@@ -137,12 +141,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7E082E177EC99F000A2253 /* CoreImage.framework in Frameworks */,
 				BF3867D81696CEE600D46E58 /* MessageUI.framework in Frameworks */,
 				BFC02845169275E700CE3F80 /* AVFoundation.framework in Frameworks */,
 				BFC02830169105F300CE3F80 /* CoreData.framework in Frameworks */,
 				BF1615A31685294400C9CB0E /* UIKit.framework in Frameworks */,
 				BF1615A51685294400C9CB0E /* Foundation.framework in Frameworks */,
 				BF1615A71685294400C9CB0E /* CoreGraphics.framework in Frameworks */,
+				BFB95A3A177E70B6007D96DD /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +187,8 @@
 		BF1615A11685294400C9CB0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF7E082C177EC965000A2253 /* CoreImage.framework */,
+				BFB95A39177E70B6007D96DD /* Crashlytics.framework */,
 				BF3867D71696CEE600D46E58 /* MessageUI.framework */,
 				BFC02844169275E700CE3F80 /* AVFoundation.framework */,
 				BFC0282F169105F200CE3F80 /* CoreData.framework */,
@@ -367,6 +375,7 @@
 				BF16159A1685294400C9CB0E /* Sources */,
 				BF16159B1685294400C9CB0E /* Frameworks */,
 				BF16159C1685294400C9CB0E /* Resources */,
+				BFB95A38177E707A007D96DD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -475,6 +484,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		BFB95A38177E707A007D96DD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 8aa032ef5873cc0d5b2c2e38ddb5cc9d893905ed";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -590,6 +612,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtoTest/SupportingFiles/OtoTest-Prefix.pch";
@@ -610,6 +633,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtoTest/SupportingFiles/OtoTest-Prefix.pch";

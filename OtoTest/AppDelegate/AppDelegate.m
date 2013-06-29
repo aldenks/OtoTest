@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -16,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [Crashlytics startWithAPIKey:@"8aa032ef5873cc0d5b2c2e38ddb5cc9d893905ed"];
+
   [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
 
   [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"results_to_email": @"" }];
