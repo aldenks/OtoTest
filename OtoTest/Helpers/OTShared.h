@@ -15,5 +15,6 @@
 
 + (NSArray *)toneFiles;
 + (void)logTestResult:(OTResult *)result;
++ (UIImage *)imageWithColor:(UIColor *)color;
 
 @end
