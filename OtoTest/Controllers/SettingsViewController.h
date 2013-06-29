@@ -8,9 +8,10 @@
 
 #import "OTViewController.h"
 
-@interface SettingsViewController : OTViewController <UITextFieldDelegate>
+@interface SettingsViewController : OTViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *toEmailAddressTextField;
+@property UIAlertView *dbSeedAlertView;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 
