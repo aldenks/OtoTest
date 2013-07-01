@@ -307,7 +307,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Default test results recipient email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRL-ve-8cp">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Default recipient:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRL-ve-8cp">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="142" id="Xu0-r8-zE6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -318,7 +321,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="jane@example.org" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9cB-n0-AFS">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="1c1-Km-xZa"/>
-                                            <constraint firstAttribute="width" constant="239" id="TdG-5Y-O4e"/>
+                                            <constraint firstAttribute="width" constant="258" id="6X0-R4-3B7"/>
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -330,20 +333,31 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="9cB-n0-AFS" firstAttribute="leading" secondItem="sVv-Wb-CS8" secondAttribute="leading" constant="15" id="5gW-hI-lI6"/>
                                     <constraint firstAttribute="height" constant="39" type="user" id="Sih-hB-h6M"/>
+                                    <constraint firstItem="9cB-n0-AFS" firstAttribute="leading" secondItem="sVv-Wb-CS8" secondAttribute="leading" constant="15" id="gkX-DQ-T8S"/>
                                     <constraint firstItem="9cB-n0-AFS" firstAttribute="top" secondItem="sVv-Wb-CS8" secondAttribute="top" constant="5" id="gtp-ff-46q"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email Test Results" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p71-xU-Gbr">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="AgC-HY-Buk"/>
+                                    <constraint firstAttribute="width" constant="160" id="Lwg-mc-x2q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99626482660000004" blue="0.93561815690000005" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="sVv-Wb-CS8" firstAttribute="top" secondItem="qRL-ve-8cp" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="2Sk-C8-L7S"/>
-                            <constraint firstItem="qRL-ve-8cp" firstAttribute="top" secondItem="1n3-xM-sF3" secondAttribute="top" constant="20" symbolic="YES" type="user" id="F38-6M-ghx"/>
+                            <constraint firstItem="p71-xU-Gbr" firstAttribute="top" secondItem="1n3-xM-sF3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="1Zy-ie-BCd"/>
+                            <constraint firstItem="p71-xU-Gbr" firstAttribute="leading" secondItem="1n3-xM-sF3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="8Or-Yl-G6j"/>
+                            <constraint firstAttribute="trailing" secondItem="sVv-Wb-CS8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KCY-o2-KOE"/>
                             <constraint firstItem="qRL-ve-8cp" firstAttribute="leading" secondItem="1n3-xM-sF3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XyK-68-VNF"/>
                             <constraint firstItem="sVv-Wb-CS8" firstAttribute="leading" secondItem="1n3-xM-sF3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YnA-f8-XwQ"/>
-                            <constraint firstItem="qRL-ve-8cp" firstAttribute="trailing" secondItem="sVv-Wb-CS8" secondAttribute="trailing" type="default" id="jLD-sd-n8Z"/>
+                            <constraint firstItem="sVv-Wb-CS8" firstAttribute="top" secondItem="qRL-ve-8cp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="d7W-FD-rog"/>
+                            <constraint firstItem="qRL-ve-8cp" firstAttribute="top" secondItem="p71-xU-Gbr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="n2e-r3-5g4"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Clm-Lv-hP4" appends="YES" id="Nci-Pn-twT"/>
@@ -369,6 +383,45 @@
         <image name="SettingsTabBarIcon" width="16" height="16"/>
         <image name="TestTabBarIcon" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="OTNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OTNavigationController.h"/>
+        </class>
+        <class className="OTViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OTViewController.h"/>
+        </class>
+        <class className="ResultDetailTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultDetailTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="presentMailer"/>
+            </relationships>
+        </class>
+        <class className="ResultsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultsTableViewController.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="OTViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="toEmailAddressTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="TestStartViewController" superclassName="OTViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestStartViewController.h"/>
+        </class>
+        <class className="TestViewController" superclassName="OTViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelTestButtonPressed"/>
+                <relationship kind="action" name="heardTone"/>
+                <relationship kind="action" name="pauseButtonPressed:"/>
+                <relationship kind="outlet" name="heardItButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
