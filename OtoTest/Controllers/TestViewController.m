@@ -221,7 +221,7 @@
 - (IBAction)cancelTestButtonPressed
 {
   [self pauseTest];
-  UIActionSheet * confirmQuitSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self
+  UIActionSheet * confirmQuitSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure?" delegate:self
                                      cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Quit"
                                      otherButtonTitles:nil];
   [confirmQuitSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
@@ -269,8 +269,17 @@
 #pragma mark - Utils
 - (double)volumeFromDecibles:(double)decibles
 {
-  // TODO find actual ratio
-  return decibles/100.0;
+  switch (self.frequencyIndex) {
+    // @[@"8000Hz", @"9000Hz", @"10000Hz", @"11200Hz", @"12500Hz", @"14000Hz", @"16000Hz"];
+    case 0: // 8000Hz
+      return decibles/100.0;
+      break;
+
+    default:
+      [NSException raise:NSRangeException format:@"Frequency index out of bounds: %i", self.frequencyIndex];
+      return 0;
+      break;
+  }
 }
 
 @end

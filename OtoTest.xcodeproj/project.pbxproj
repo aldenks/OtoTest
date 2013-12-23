@@ -28,7 +28,6 @@
 		BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC027AC168E899500CE3F80 /* InfoPlist.strings */; };
 		BFC027CB168E899500CE3F80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B2168E899500CE3F80 /* AppDelegate.m */; };
 		BFC027CC168E899500CE3F80 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027B5168E899500CE3F80 /* TestViewController.m */; };
-		BFC027D3168E899500CE3F80 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC027C2168E899500CE3F80 /* MainStoryboard_iPad.storyboard */; };
 		BFC027D4168E899500CE3F80 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC027C3168E899500CE3F80 /* MainStoryboard_iPhone.storyboard */; };
 		BFC027D5168E899500CE3F80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027C5168E899500CE3F80 /* main.m */; };
 		BFC027D7168E8A1000CE3F80 /* OtoTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027AA168E899500CE3F80 /* OtoTestTests.m */; };
@@ -98,7 +97,6 @@
 		BFC027B2168E899500CE3F80 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BFC027B4168E899500CE3F80 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		BFC027B5168E899500CE3F80 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		BFC027C2168E899500CE3F80 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		BFC027C3168E899500CE3F80 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		BFC027C5168E899500CE3F80 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BFC027C6168E899500CE3F80 /* OtoTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OtoTest-Info.plist"; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				BFC027C3168E899500CE3F80 /* MainStoryboard_iPhone.storyboard */,
-				BFC027C2168E899500CE3F80 /* MainStoryboard_iPad.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -439,7 +436,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */,
-				BFC027D3168E899500CE3F80 /* MainStoryboard_iPad.storyboard in Resources */,
 				BFC027D4168E899500CE3F80 /* MainStoryboard_iPhone.storyboard in Resources */,
 				BFC027E8168F603400CE3F80 /* 10000Hz.mp3 in Resources */,
 				BFC027E9168F603400CE3F80 /* 11200Hz.mp3 in Resources */,
@@ -617,7 +613,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtoTest/SupportingFiles/OtoTest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/OtoTest/SupportingFiles/OtoTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = OtoTest;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -638,7 +634,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtoTest/SupportingFiles/OtoTest-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/OtoTest/SupportingFiles/OtoTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = OtoTest;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

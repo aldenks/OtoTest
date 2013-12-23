@@ -23,15 +23,6 @@
   [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"results_to_email": @"" }];
 
   UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-  // pull tint color of first navigation bar, create flat image from that color, then set as bg of all nav bars
-  // then set the tint to black so all the buttons on the nav bar will be black
-  UIColor *navBarColor = ((UINavigationController *)tabBarController.viewControllers[0]).navigationBar.tintColor;
-  UIImage *navBarImg = [OTShared imageWithColor:navBarColor];
-  for (UINavigationController *vc in tabBarController.viewControllers) {
-    vc.navigationBar.tintColor = [UIColor blackColor];
-    [vc.navigationBar setBackgroundImage:navBarImg forBarMetrics:UIBarMetricsDefault];
-    [vc.navigationBar setBackgroundImage:navBarImg forBarMetrics:UIBarMetricsLandscapePhone];
-  }
   for (id vc in [tabBarController viewControllers]) {
     if ([vc respondsToSelector:@selector(setManagedObjectContext:)])
       [vc setManagedObjectContext:self.managedObjectContext];

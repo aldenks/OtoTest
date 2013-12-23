@@ -180,7 +180,7 @@
     [[[UIAlertView alloc] initWithTitle:@"Oh No! Email Sending Failed" message:msg
                                delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
   }
-  [self dismissModalViewControllerAnimated:YES];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Lazy Loaders
