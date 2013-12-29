@@ -32,12 +32,9 @@
 		BFC027D5168E899500CE3F80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027C5168E899500CE3F80 /* main.m */; };
 		BFC027D7168E8A1000CE3F80 /* OtoTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027AA168E899500CE3F80 /* OtoTestTests.m */; };
 		BFC027E8168F603400CE3F80 /* 10000Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E1168F603400CE3F80 /* 10000Hz.mp3 */; };
-		BFC027E9168F603400CE3F80 /* 11200Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E2168F603400CE3F80 /* 11200Hz.mp3 */; };
 		BFC027EA168F603400CE3F80 /* 12500Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E3168F603400CE3F80 /* 12500Hz.mp3 */; };
-		BFC027EB168F603400CE3F80 /* 14000Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E4168F603400CE3F80 /* 14000Hz.mp3 */; };
 		BFC027EC168F603400CE3F80 /* 16000Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E5168F603400CE3F80 /* 16000Hz.mp3 */; };
 		BFC027ED168F603400CE3F80 /* 8000Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E6168F603400CE3F80 /* 8000Hz.mp3 */; };
-		BFC027EE168F603400CE3F80 /* 9000Hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC027E7168F603400CE3F80 /* 9000Hz.mp3 */; };
 		BFC027FD16905A0600CE3F80 /* OTFrequencyResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC027FC16905A0600CE3F80 /* OTFrequencyResult.m */; };
 		BFC02830169105F300CE3F80 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC0282F169105F200CE3F80 /* CoreData.framework */; };
 		BFC0283F16917C5700CE3F80 /* OTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC0283E16917C5600CE3F80 /* OTViewController.m */; };
@@ -102,12 +99,9 @@
 		BFC027C6168E899500CE3F80 /* OtoTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OtoTest-Info.plist"; sourceTree = "<group>"; };
 		BFC027C7168E899500CE3F80 /* OtoTest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OtoTest-Prefix.pch"; sourceTree = "<group>"; };
 		BFC027E1168F603400CE3F80 /* 10000Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 10000Hz.mp3; sourceTree = "<group>"; };
-		BFC027E2168F603400CE3F80 /* 11200Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11200Hz.mp3; sourceTree = "<group>"; };
 		BFC027E3168F603400CE3F80 /* 12500Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12500Hz.mp3; sourceTree = "<group>"; };
-		BFC027E4168F603400CE3F80 /* 14000Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 14000Hz.mp3; sourceTree = "<group>"; };
 		BFC027E5168F603400CE3F80 /* 16000Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 16000Hz.mp3; sourceTree = "<group>"; };
 		BFC027E6168F603400CE3F80 /* 8000Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8000Hz.mp3; sourceTree = "<group>"; };
-		BFC027E7168F603400CE3F80 /* 9000Hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9000Hz.mp3; sourceTree = "<group>"; };
 		BFC027F816905A0500CE3F80 /* OTResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTResult.h; sourceTree = "<group>"; };
 		BFC027FB16905A0600CE3F80 /* OTFrequencyResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTFrequencyResult.h; sourceTree = "<group>"; };
 		BFC027FC16905A0600CE3F80 /* OTFrequencyResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTFrequencyResult.m; sourceTree = "<group>"; };
@@ -322,12 +316,9 @@
 			isa = PBXGroup;
 			children = (
 				BFC027E1168F603400CE3F80 /* 10000Hz.mp3 */,
-				BFC027E2168F603400CE3F80 /* 11200Hz.mp3 */,
 				BFC027E3168F603400CE3F80 /* 12500Hz.mp3 */,
-				BFC027E4168F603400CE3F80 /* 14000Hz.mp3 */,
 				BFC027E5168F603400CE3F80 /* 16000Hz.mp3 */,
 				BFC027E6168F603400CE3F80 /* 8000Hz.mp3 */,
-				BFC027E7168F603400CE3F80 /* 9000Hz.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -438,12 +429,9 @@
 				BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */,
 				BFC027D4168E899500CE3F80 /* MainStoryboard_iPhone.storyboard in Resources */,
 				BFC027E8168F603400CE3F80 /* 10000Hz.mp3 in Resources */,
-				BFC027E9168F603400CE3F80 /* 11200Hz.mp3 in Resources */,
 				BFC027EA168F603400CE3F80 /* 12500Hz.mp3 in Resources */,
-				BFC027EB168F603400CE3F80 /* 14000Hz.mp3 in Resources */,
 				BFC027EC168F603400CE3F80 /* 16000Hz.mp3 in Resources */,
 				BFC027ED168F603400CE3F80 /* 8000Hz.mp3 in Resources */,
-				BFC027EE168F603400CE3F80 /* 9000Hz.mp3 in Resources */,
 				BFC35EAD16A0FE9800E9467A /* AppIconiPad.png in Resources */,
 				BFC35EAE16A0FE9800E9467A /* AppIcon@2x.png in Resources */,
 				BFC35EAF16A0FE9800E9467A /* AppIconiPad@2x.png in Resources */,
