@@ -58,6 +58,8 @@
   self.result = result;
   self.frequencyIndex = INITIAL_FREQ_IDX;
   self.paused = false;
+  MPMusicPlayerController *musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
+  musicPlayer.volume = 0.5;
   [self beginNextFrequency];
 }
 
@@ -170,8 +172,8 @@
     self.heardLastTone = NO;
     self.toneHeardHistory = [NSMutableDictionary dictionaryWithCapacity:10];
     if (self.frequencyIndex == 0) {
-      // return control to UI before starting test so it's responsive and wait a second before first tone
-      [self performSelector:@selector(doToneForTest) withObject:nil afterDelay:3];
+      // return control to UI before starting test so it's responsive and wait a bit before first tone
+      [self performSelector:@selector(doToneForTest) withObject:nil afterDelay:4];
     } else {
       [self doToneForTest];
     }
@@ -270,14 +272,21 @@
 - (double)volumeFromDecibles:(double)decibles
 {
   switch (self.frequencyIndex) {
-    // @[@"8000Hz", @"9000Hz", @"10000Hz", @"11200Hz", @"12500Hz", @"14000Hz", @"16000Hz"];
     case 0: // 8000Hz
-      return decibles/100.0;
+      return 6.781179e-6L * exp(0.137537L * decibles);
       break;
-
+    case 1: // 10000Hz
+      return 5.212821e-5L * exp(0.108261L * decibles);
+      break;
+    case 2: // 12500Hz
+      return 2.387315e-4L * exp(0.108142L * decibles);
+      break;
+    case 3: // 16000Hz
+      return 3.280152e-4L * exp(0.112130L * decibles);
+      break;
     default:
       [NSException raise:NSRangeException format:@"Frequency index out of bounds: %i", self.frequencyIndex];
-      return 0;
+      return -1;
       break;
   }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF078EF11870DA3B007A8528 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF078EF01870DA3B007A8528 /* MediaPlayer.framework */; };
 		BF10EFF6170D38E100FC1323 /* TestStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10EFF5170D38E100FC1323 /* TestStartViewController.m */; };
 		BF1615A31685294400C9CB0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A21685294400C9CB0E /* UIKit.framework */; };
 		BF1615A51685294400C9CB0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A41685294400C9CB0E /* Foundation.framework */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF078EF01870DA3B007A8528 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		BF10EFF4170D38E100FC1323 /* TestStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestStartViewController.h; sourceTree = "<group>"; };
 		BF10EFF5170D38E100FC1323 /* TestStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestStartViewController.m; sourceTree = "<group>"; };
 		BF16159E1685294400C9CB0E /* OtoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF078EF11870DA3B007A8528 /* MediaPlayer.framework in Frameworks */,
 				BF7E082E177EC99F000A2253 /* CoreImage.framework in Frameworks */,
 				BF3867D81696CEE600D46E58 /* MessageUI.framework in Frameworks */,
 				BFC02845169275E700CE3F80 /* AVFoundation.framework in Frameworks */,
@@ -179,6 +182,7 @@
 		BF1615A11685294400C9CB0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF078EF01870DA3B007A8528 /* MediaPlayer.framework */,
 				BF7E082C177EC965000A2253 /* CoreImage.framework */,
 				BFB95A39177E70B6007D96DD /* Crashlytics.framework */,
 				BF3867D71696CEE600D46E58 /* MessageUI.framework */,

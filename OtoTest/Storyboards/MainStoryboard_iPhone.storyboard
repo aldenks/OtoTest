@@ -73,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kr1-wo-rMh">
-                                <rect key="frame" x="20" y="89" width="280" height="410"/>
+                                <rect key="frame" x="20" y="89" width="280" height="396"/>
                                 <color key="backgroundColor" red="0.0" green="0.57093978099999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                 <state key="normal" title="Heard It">
@@ -90,11 +90,20 @@
                                     <action selector="heardTone" destination="2" eventType="touchUpInside" id="lDd-xj-fWM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please don't press the volume buttons during test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyb-jz-q0k">
+                                <rect key="frame" x="10" y="493" width="300" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99626482660000004" blue="0.93561815690000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="luo-jG-div" firstAttribute="top" secondItem="Zyb-jz-q0k" secondAttribute="bottom" constant="10" id="bOV-MZ-x54"/>
                             <constraint firstItem="kr1-wo-rMh" firstAttribute="top" secondItem="b4G-mP-ad8" secondAttribute="bottom" constant="25" id="eTK-om-QpA"/>
-                            <constraint firstItem="luo-jG-div" firstAttribute="top" secondItem="kr1-wo-rMh" secondAttribute="bottom" constant="20" id="z0s-fX-G5X"/>
+                            <constraint firstItem="Zyb-jz-q0k" firstAttribute="top" secondItem="kr1-wo-rMh" secondAttribute="bottom" constant="8" id="m87-Ek-ESg"/>
+                            <constraint firstAttribute="centerX" secondItem="Zyb-jz-q0k" secondAttribute="centerX" id="uhD-xL-DMT"/>
                             <constraint firstAttribute="trailing" secondItem="kr1-wo-rMh" secondAttribute="trailing" constant="20" symbolic="YES" id="zBm-Yo-aC5"/>
                             <constraint firstItem="kr1-wo-rMh" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" id="zJz-NY-qtM"/>
                         </constraints>
