@@ -24,6 +24,7 @@
 		BF078F0E18766B0F007A8528 /* AppIcon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BF078EFF18766B0F007A8528 /* AppIcon-72.png */; };
 		BF078F0F18766B0F007A8528 /* AppIcon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF078F0018766B0F007A8528 /* AppIcon-72@2x.png */; };
 		BF078F1118766D4A007A8528 /* AppIcon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF078F1018766D4A007A8528 /* AppIcon-Small-50@2x.png */; };
+		BF078F1318767271007A8528 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF078F1218767271007A8528 /* Default-568h@2x.png */; };
 		BF10EFF6170D38E100FC1323 /* TestStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10EFF5170D38E100FC1323 /* TestStartViewController.m */; };
 		BF1615A31685294400C9CB0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A21685294400C9CB0E /* UIKit.framework */; };
 		BF1615A51685294400C9CB0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1615A41685294400C9CB0E /* Foundation.framework */; };
@@ -93,6 +94,7 @@
 		BF078EFF18766B0F007A8528 /* AppIcon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-72.png"; sourceTree = "<group>"; };
 		BF078F0018766B0F007A8528 /* AppIcon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-72@2x.png"; sourceTree = "<group>"; };
 		BF078F1018766D4A007A8528 /* AppIcon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-Small-50@2x.png"; sourceTree = "<group>"; };
+		BF078F1218767271007A8528 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BF10EFF4170D38E100FC1323 /* TestStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestStartViewController.h; sourceTree = "<group>"; };
 		BF10EFF5170D38E100FC1323 /* TestStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestStartViewController.m; sourceTree = "<group>"; };
 		BF16159E1685294400C9CB0E /* OtoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 		BF1615931685294400C9CB0E = {
 			isa = PBXGroup;
 			children = (
+				BF078F1218767271007A8528 /* Default-568h@2x.png */,
 				BFC027AF168E899500CE3F80 /* OtoTest */,
 				BFC027A8168E899500CE3F80 /* OtoTestTests */,
 				BF1615A11685294400C9CB0E /* Frameworks */,
@@ -469,6 +472,7 @@
 				BFC027C9168E899500CE3F80 /* InfoPlist.strings in Resources */,
 				BF078F0F18766B0F007A8528 /* AppIcon-72@2x.png in Resources */,
 				BF078F0618766B0F007A8528 /* AppIcon.png in Resources */,
+				BF078F1318767271007A8528 /* Default-568h@2x.png in Resources */,
 				BF078F1118766D4A007A8528 /* AppIcon-Small-50@2x.png in Resources */,
 				BF078F0318766B0F007A8528 /* AppIcon-Small-50.png in Resources */,
 				BFC027D4168E899500CE3F80 /* MainStoryboard_iPhone.storyboard in Resources */,
