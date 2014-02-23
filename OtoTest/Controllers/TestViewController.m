@@ -44,6 +44,8 @@
 
 - (void)popTestUI
 {
+  NSDictionary *resultDict = @{ @"result": self.result };
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"TestComplete" object:self userInfo:resultDict];
   [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -57,17 +59,16 @@
   result.date = [NSDate date];
   self.result = result;
   self.frequencyIndex = INITIAL_FREQ_IDX;
+  self.ear = INITIAL_EAR;
   self.paused = false;
   MPMusicPlayerController *musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
   musicPlayer.volume = 0.5;
-  [self beginNextFrequency];
+  [self beginNextEarOrFrequency];
 }
 
 - (void)finishTest
 {
   [OTShared logTestResult:self.result];
-  // TODO clean up other vars
-
   // allow self.result and its related frequency results to be released
   [self.managedObjectContext refreshObject:self.result mergeChanges:NO];
   self.result = nil;
@@ -162,9 +163,14 @@
   [self performSelector:@selector(doToneForTest) withObject:nil afterDelay:INTER_TONE_TIME];
 }
 
-- (void)beginNextFrequency
+- (void)beginNextEarOrFrequency
 {
-  self.frequencyIndex++;
+  if (self.ear == LeftEar) {
+    self.ear = RightEar;
+  } else {
+    self.ear = LeftEar;
+    self.frequencyIndex++;
+  }
   if (self.frequencyIndex < [self.frequencies count]) {
     self.testPhase = OTTestPhaseFirst;
     self.dBVolume = INITIAL_DB;
@@ -188,7 +194,8 @@
   OTFrequencyResult *fr = (OTFrequencyResult *)[NSEntityDescription insertNewObjectForEntityForName:@"OTFrequencyResult"
                                                                              inManagedObjectContext:self.managedObjectContext];
 
-  fr.freq = self.frequencies[self.frequencyIndex];
+  NSString *ear = self.ear == LeftEar ? @"Left" : @"Right";
+  fr.freq = [NSString stringWithFormat:@"%@, %@", self.frequencies[self.frequencyIndex], ear];
   fr.dB = @(self.dBVolume);
   [self.result addFrequencyResultsObject:fr];
 
@@ -197,7 +204,7 @@
     [NSException raise:@"Managed Object Context Save Failed" format:@"%@", [error localizedDescription]];
   }
 
-  [self beginNextFrequency];
+  [self beginNextEarOrFrequency];
 }
 
 - (BOOL)isDoneWithFrequency
@@ -260,6 +267,7 @@
   NSURL *soundURL = [[NSBundle mainBundle] URLForResource:resource withExtension:ext];
   self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
   self.player.volume = [self volumeFromDecibles:self.dBVolume];
+  self.player.pan = self.ear == LeftEar ? -1.0 : 1.0;
   [self.player play];
 }
 

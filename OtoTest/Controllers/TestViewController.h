@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVAudioPlayer.h>
 #import <MediaPlayer/MediaPlayer.h>
-#import "OTViewController.h"
+
 #import "AppDelegate.h"
+#import "OTViewController.h"
+#import "ResultDetailTableViewController.h"
 
 #define INTER_TONE_TIME        5.0   // in seconds (TODO: make it random)
 #define RECOGNITION_WINDOW     4.0   // in seconds
@@ -19,8 +21,10 @@
 #define DECREASE_DB_AMT        10.0
 #define ACTUAL_INITIAL_DB      30.0
 // avoid special cases for first play of a frequency, and first frequency
+// set value to "one before" initial desired values.
 #define INITIAL_DB             ACTUAL_INITIAL_DB - FIRST_INCREASE_DB_AMT 
 #define INITIAL_FREQ_IDX       -1
+#define INITIAL_EAR            RightEar
 
 // Phases of the Hughson-Westlake test. These aren't anything official
 // they just help the implementation.
@@ -28,6 +32,11 @@ typedef enum {
   OTTestPhaseFirst,  // larger decible changes, going up until first time tone is heard
   OTTestPhaseSecond, // narowing on and finding the threshold
 } OTTestPhase;
+
+typedef enum {
+  LeftEar,
+  RightEar,
+} OTEar;
 
 @interface TestViewController : OTViewController <UIActionSheetDelegate>
 
@@ -39,6 +48,7 @@ typedef enum {
 
 @property OTResult *result;          // The result object for the current test
 @property OTTestPhase testPhase;     // current phase of the test
+@property OTEar ear;                 // ear we are testing
 @property BOOL paused;               // is the test paused?
 @property NSUInteger frequencyIndex; // current index into the frequencies array
 @property double dBVolume;           // last decible volume played

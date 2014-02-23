@@ -45,12 +45,20 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="10"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For reliable results, always use the same headphones when taking the test." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="227" translatesAutoresizingMaskIntoConstraints="NO" id="wQ5-pZ-ujL">
+                                <rect key="frame" x="47" y="290" width="227" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99626482660000004" blue="0.93561815690000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="6Im-ST-H7d" secondAttribute="centerX" constant="-0.5" id="Em6-YN-2gq"/>
+                            <constraint firstItem="wQ5-pZ-ujL" firstAttribute="top" secondItem="6Im-ST-H7d" secondAttribute="bottom" constant="39" id="NhT-A0-ANy"/>
                             <constraint firstItem="6Im-ST-H7d" firstAttribute="top" secondItem="Uep-Ur-CTG" secondAttribute="bottom" constant="112" id="cN0-ey-a30"/>
                             <constraint firstAttribute="centerX" secondItem="21" secondAttribute="centerX" id="d8U-JZ-22M"/>
+                            <constraint firstItem="wQ5-pZ-ujL" firstAttribute="centerX" secondItem="6Im-ST-H7d" secondAttribute="centerX" id="klJ-B8-boh"/>
                             <constraint firstItem="PxO-qn-X8o" firstAttribute="top" secondItem="21" secondAttribute="bottom" constant="8" id="krc-LN-hms"/>
                         </constraints>
                     </view>
@@ -125,6 +133,7 @@
                     <connections>
                         <outlet property="heardItButton" destination="kr1-wo-rMh" id="ZmJ-PB-DNn"/>
                         <outlet property="pauseButton" destination="z59-4z-zDg" id="DqX-Dr-vGr"/>
+                        <segue destination="9bJ-pA-sy4" kind="push" identifier="AfterTestToResultsSegue" id="t0Y-k9-DzI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -418,4 +427,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="t0Y-k9-DzI"/>
+    </inferredMetricsTieBreakers>
 </document>

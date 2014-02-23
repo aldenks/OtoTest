@@ -51,6 +51,17 @@
   // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - New Test Result Notification
+- (void)displayNewTestResult:(NSNotification *)notification
+{
+  OTResult *result = notification.userInfo[@"result"];
+  ResultDetailTableViewController *resultVC = [[ResultDetailTableViewController alloc] init];
+  NSLog(@"Display New Test %@, %@, %@", result, self.navigationController, self.tabBarController);
+  resultVC.result = result;
+  self.tabBarController.selectedViewController = self.navigationController;
+  [self.navigationController pushViewController:resultVC animated:YES];
+}
+
 #pragma mark - Core Data
 
 - (NSMutableArray *)fetchAllResults

@@ -16,5 +16,6 @@
 @property NSMutableArray *results;
 
 - (NSMutableArray *)fetchAllResults;
+- (void)displayNewTestResult:(NSNotification *)notification;
 
 @end
