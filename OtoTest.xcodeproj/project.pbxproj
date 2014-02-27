@@ -442,6 +442,11 @@
 				CLASSPREFIX = OT;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = alden;
+				TargetAttributes = {
+					BF16159D1685294400C9CB0E = {
+						DevelopmentTeam = RKM2755V23;
+					};
+				};
 			};
 			buildConfigurationList = BF1615981685294400C9CB0E /* Build configuration list for PBXProject "OtoTest" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -664,7 +669,7 @@
 		BF1615E71685294500C9CB0E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

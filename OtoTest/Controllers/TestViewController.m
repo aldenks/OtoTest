@@ -44,8 +44,6 @@
 
 - (void)popTestUI
 {
-  NSDictionary *resultDict = @{ @"result": self.result };
-  [[NSNotificationCenter defaultCenter] postNotificationName:@"TestComplete" object:self userInfo:resultDict];
   [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -68,6 +66,8 @@
 
 - (void)finishTest
 {
+  NSDictionary *resultDict = @{ @"result": self.result };
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"TestComplete" object:self userInfo:resultDict];
   [OTShared logTestResult:self.result];
   // allow self.result and its related frequency results to be released
   [self.managedObjectContext refreshObject:self.result mergeChanges:NO];
